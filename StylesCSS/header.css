@@ -1,0 +1,75 @@
+*{                                              /* Standartwerte */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;   
+    text-decoration: none;
+    list-style: none;
+}
+
+:root{                                              /* wiederverwendbare Variablen */
+    --text-color: white;
+    --lightblue-color: lightblue;
+    --background-color: rgba(0, 0, 0, 0.8);
+}
+
+.header{                                            /* Headerabschnitt */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 35px 12%;
+    background: rgba(0, 0, 0, 0.8);             
+    backdrop-filter: blur(10px);                    /* Geblurt wenn man scrollt */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+
+}
+
+.navbar{                                            /* Navbar */
+    display: flex;
+    align-items: center;
+    gap: 90px;                                      /* Abstände der Elemente */
+}
+
+
+.navbar a{                                          /* Einstellung der a- Elemente in der Navbar */
+    font-size: 18px;
+    color: var(--text-color);
+    font-weight: 500px;
+    margin: 0 20px;
+    border-bottom: 3px solid transparent;
+    transition: 0.3s ease;
+}
+
+.navbar a:hover{                                        /* Hover-effekt für a-Elemente innerhalb der Navbar */
+    color: var(--lightblue-color);
+    border-bottom: 3px solid var(--lightblue-color);
+}
+
+.logo{                                                  /* Logo in der Navbar */
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+
+}
+
+.suchleiste-navbar input{                                /*Suchfeld in der Navbar*/
+    padding: 5px 10px;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.suchleiste-navbar button {                                 /*Suchfeld-Button in der Navbar */
+    padding: 5px 10px;
+    background-color: var(--lightblue-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
