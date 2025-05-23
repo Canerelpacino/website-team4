@@ -44,7 +44,7 @@
     transition: 0.3s ease;
 }
 
-.navbar a:hover{                                        /* Hover-effekt für a-Elemente innerhalb der Navbar */
+.navbar a:hover,.navbar a.active{                                        /* Hover-effekt für a-Elemente innerhalb der Navbar */
     color: var(--lightblue-color);
     border-bottom: 3px solid var(--lightblue-color);
 }
