@@ -1,116 +1,125 @@
+<!--
+  File: index.html
+  Description: Anzeige von Projektdetails für ein Blue Ant-Projekt
+  Authors:
+    - Nashwan Adel Butt
+    - Furkan Adigüzel
+    - Aron Emmermann
+    - Caner Celik
+  Created: 2025-06-03
+  Version: 1.0
+-->
+
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title> Blue-Ant </title>
-         <link rel="stylesheet" href="StylesCSS/header.css">                                    <!--Stylesheet-->
-         <link rel="stylesheet" href="StylesCSS/about.css">
-         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">  <!--Standart-Schriftart-->
-    </head>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <title>Über uns</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    <body>
+<!-- Header-Bereich mit Navigation -->
+<header>
+    <div class="logo">
+        <img src="Bilder/BlueShark.png" alt="Logo" class="logo-image">
+        <span class="logo-text">BlueShark</span>
+    </div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About</a>
+    </nav>
+</header>
 
-        <header class="header">                                             <!-- Navbar, Logo, Seitenwechsel zwischen Home und About, Suchleiste  -->
-            <img class="logo" src="Bilder/blueant.png">
-            <nav class="navbar"> 
-                <a href="index.html"> Home </a>
-                <a href="About.html" class="active" > About </a>
-                <form class="suchleiste-navbar">
-                    <input type="text" placeholder="Suche...">
-                    <button type="submit">Suchen</button>
-                </form>
-            </nav>
-        </header>
+<main>
 
-        <section class="wir">                                            <!--Über uns-->
-           
-            <div class="team-container">
+    <!-- Team-Vorstellung -->
+    <section class="wir">
+        <div class="team-container">
 
-                <h2 class="ueberschriftabout">Das sind wir</h2>
+            <h2 class="ueberschriftabout">Das sind wir</h2>
 
-                <div class="team-grid">                                   <!-- Teammitglieder-->
-                    
-                    <div class="teammitglied">
-                        <img src="Bilder/profilbild.png" alt="Profilbild">
-                        <h3>Nikita Adarycev</h3>
-                        <p>Projektleiter</p>
-                    </div>
+            <div class="team-grid">
 
-                    <div class="teammitglied">
-                        <img src="Bilder/profilbild.png" alt="Profilbild">
-                        <h3>Melissa Tro</h3>
-                        <p>Stellvertreterin</p>
-                    </div>
-
-                    <div class="teammitglied">
-                        <img src="Bilder/profilbild.png" alt="Profilbild">
-                        <h3>Adel Nashwan Butt</h3>
-                        <p>Developer</p>
-                    </div>
-
-                    <div class="teammitglied">
-                        <img src="Bilder/profilbild.png" alt="Profilbild">
-                        <h3>Aron Emmermann</h3>
-                        <p>Developer</p>
-                    </div>
-
-                    <div class="teammitglied">
-                        <img src="Bilder/furkanbild.png" alt="Profilbild">
-                        <h3>Furkan Adigüzel</h3>
-                        <p>Developer</p>
-                    </div>
-
-                    <div class="teammitglied">
-                        <img src="Bilder/profilbild.png" alt="Profilbild">
-                        <h3>Caner</h3>
-                        <p>Developer</p>
-                    </div>
-
-                    <div class="teammitglied">
-                        <img src="Bilder/profilbild.png" alt="Profilbild">
-                        <h3>Marcel Trung Hieu Do</h3>
-                        <p>Qualitätssicherung</p>
-                    </div>
-
-                    <div class="teammitglied">
-                        <img src="Bilder/profilbild.png" alt="Profilbild">
-                        <h3>Omid Sadat</h3>
-                        <p>Qualitätssicherung</p>
-                    </div>
-
-                    <div class="teammitglied">
-                        <img src="Bilder/profilbild.png" alt="Profilbild">
-                        <h3>Tra My Nguyen</h3>
-                        <p>Qualitätssicherung</p>
-                    </div>
-
+                <!-- Einzelne Teammitglieder -->
+                <div class="teammitglied">
+                    <img src="Bilder/profilbild.png" alt="Profilbild Nikita Adarycev">
+                    <h3>Nikita Adarycev</h3>
+                    <p>Nikita.Adarycev@Student.HTW-Berlin.de<br>Projektleiter</p>
                 </div>
-                
+
+                <div class="teammitglied">
+                    <img src="Bilder/profilbild.png" alt="Profilbild Melissa Tro">
+                    <h3>Melissa Tro</h3>
+                    <p>Melissa.Tro@Student.HTW-Berlin.de<br>Stellvertreterin</p>
+                </div>
+
+                <div class="teammitglied">
+                    <img src="Bilder/profilbild.png" alt="Profilbild Nashwan Adel Butt">
+                    <h3>Nashwan Adel Butt</h3>
+                    <p>Nashwan.Butt@Student.HTW-Berlin.de<br>Developer</p>
+                </div>
+
+                <div class="teammitglied">
+                    <img src="Bilder/profilbild.png" alt="Profilbild Aron Emmermann">
+                    <h3>Aron Emmermann</h3>
+                    <p>Aron.Emmermann@Student.HTW-Berlin.de<br>Developer</p>
+                </div>
+
+                <div class="teammitglied">
+                    <img src="Bilder/furkanbild.png" alt="Profilbild Furkan Adigüzel">
+                    <h3>Furkan Adigüzel</h3>
+                    <p>Furkan.Adiguezel@Student.HTW-Berlin.de<br>Developer</p>
+                </div>
+
+                <div class="teammitglied">
+                    <img src="Bilder/profilbild.png" alt="Profilbild Caner Celik">
+                    <h3>Caner Celik</h3>
+                    <p>Caner.Celik@Student.HTW-Berlin.de<br>Developer</p>
+                </div>
+
+                <div class="teammitglied">
+                    <img src="Bilder/profilbild.png" alt="Profilbild Marcel Trung Hieu Do">
+                    <h3>Marcel Trung Hieu Do</h3>
+                    <p>Marcel.Do@Student.HTW-Berlin.de<br>Qualitätssicherung</p>
+                </div>
+
+                <div class="teammitglied">
+                    <img src="Bilder/profilbild.png" alt="Profilbild Omid Sadat">
+                    <h3>Omid Sadat</h3>
+                    <p>Omid.Sadat@Student.HTW-Berlin.de<br>Qualitätssicherung</p>
+                </div>
+
+                <div class="teammitglied">
+                    <img src="Bilder/profilbild.png" alt="Profilbild Tra My Nguyen">
+                    <h3>Tra My Nguyen</h3>
+                    <p>TraMy.Nguyen@Student.HTW-Berlin.de<br>Qualitätssicherung</p>
+                </div>
+
             </div>
+        </div>
+    </section>
 
-        </section>
+    <!-- Beschreibung des Projekts -->
+    <section class="ueber">
+        <div class="projektbeschreibung">
 
-        <section class="ueber">                                                 <!--Relevante Informationen-->
+            <h2>Über uns und das Projekt</h2>
 
-            <div class="test">
+            <p>
+                Wir sind Studierende der Hochschule für Technik und Wirtschaft im Studiengang
+                Wirtschaftsinformatik und haben diese Webanwendung im Rahmen des Mastermoduls IV-Management entwickelt.
+            </p>
 
-                <h2>Über uns und das Projekt</h2>
+            <p>
+                Dieses Projekt ist eine Webanwendung, die Daten über die REST-API von <b>Blue Ant</b> abruft und im Browser darstellt. Ziel ist es, Projektdaten wie Aufgaben, Ressourcen und Status übersichtlich und dynamisch aufzubereiten.
+                Es soll eine informative Webseite entstehen, die eine umfassende Übersicht aller aktiven Projekte in Blue Ant bietet und dabei gezielt definierte Projektdaten anzeigt.
+            </p>
 
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus a risus tincidunt vehicula. In hac habitasse platea dictumst. Nullam ac semper turpis. Suspendisse potenti. Duis sit amet commodo tortor. Curabitur varius justo ut lacus tincidunt, nec lobortis felis vestibulum. Integer rhoncus sapien in nisl faucibus, vitae eleifend lacus tincidunt.
-                </p>
+        </div>
+    </section>
 
-                <p>
-                   Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed a ligula at libero suscipit accumsan. Proin sed magna vel magna interdum porta. Mauris feugiat metus at est viverra, id faucibus ligula euismod. Aliquam erat volutpat. Morbi mattis augue a nulla lacinia fermentum. Aenean in laoreet arcu, nec sollicitudin mauris.
-                </p>
+</main>
 
-            </div>
-
-        </section>
-
-    </body>
-
-
-
+</body>
 </html>
