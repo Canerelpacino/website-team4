@@ -30,7 +30,11 @@ Die Anwendung wird mit **HTML**, **CSS** und **JavaScript** umgesetzt.
 
 ## ⚙️ Technologiestack
 
-- **HTML, CSS, JavaScript**
+- **HTML**
+- **CSS**
+- **JavaScript**
+- **Node.js**
+- **API**: REST (Blue Ant API)
 
 
 ---
