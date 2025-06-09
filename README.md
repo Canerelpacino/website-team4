@@ -38,9 +38,36 @@ Die Anwendung wird mit **HTML**, **CSS** und **JavaScript** umgesetzt.
 
 ## 🗂️ Projektstruktur
 
+**Projekt**/  
+├── **backend**/ # Backend-Logik & Datenverarbeitung  
+│ ├── customer_data.json # Rohdaten von Kundendaten (von API)  
+│ ├── project_data.json # Rohdaten von Projekten (von API)  
+│ ├── final_data.json # Transformierte Projektdaten (bereit fürs Frontend)  
+│ ├── dataManagement.js # Transformationslogik für Projektdaten  
+│ └── server.js # Express-Server (Webserver) + API-Routing  
+│  
+├── **frontend**/ # Benutzeroberfläche  
+│ ├── Bilder/ # Alle Bilddateien  
+│ │ ├── blueant.png  
+│ │ ├── BlueShark.png # Logo mit Hai  
+│ │ ├── furkanbild.png # Teammitglied-Bild  
+│ │ └── profilbild.png # Platzhalterbild  
+│ │  
+│ ├── StylesCSS/ # Zentrales CSS-Styling  
+│ │ └── style.css  
+│ │  
+│ ├── index.html # Startseite mit Projektübersicht  
+│ ├── About.html # Team- & Projektbeschreibung  
+│ └── project.html # Detailseite eines Projekts  
+
+- Der `backend/`-Ordner ruft und verarbeitet die Daten von der BlueAnt-REST-API.
+- Das `frontend/` liest die transformierten Daten aus `/api/final-data`.
+- Bilder und Logos befinden sich im `frontend/Bilder/`-Verzeichnis.
+- Das CSS befindet sich zentral in `frontend/StylesCSS/style.css`.
+
 # to do´s um den Webserver zu starten
-## 1. **Node.js (lts)** muss installiert werden (https://nodejs.org/en)
-Terminal eingabe:
+## 1. **Node.js (lts)** muss installiert werden  
+(https://nodejs.org/en)
 ## 2. Neues Node.js-Projekt initialisieren
 ```bash 
   npm init -y
@@ -56,3 +83,6 @@ Terminal eingabe:
 ```bash
     node backend/server.js
 ```
+## 5. Webseite öffnen
+
+Rufe http://localhost:3000 im Browser auf, um die Webanwendung live zu betrachten.
