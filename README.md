@@ -38,3 +38,21 @@ Die Anwendung wird mit **HTML**, **CSS** und **JavaScript** umgesetzt.
 
 ## 🗂️ Projektstruktur
 
+# to do´s um den Webserver zu starten
+## 1. **Node.js (lts)** muss installiert werden (https://nodejs.org/en)
+Terminal eingabe:
+## 2. Neues Node.js-Projekt initialisieren
+```bash 
+  npm init -y
+```
+## 3. Abhängigkeiten installieren
+```bash 
+  npm install express axios
+```
+```bash 
+  npm install dotenv cors morgan
+```
+## 4. Webserver starten
+```bash
+    node backend/server.js
+```
