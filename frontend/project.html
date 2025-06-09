@@ -1,0 +1,92 @@
+<!--
+  File: project.html
+  Description: Anzeige von Projektdetails für ein Blue Ant-Projekt
+  Authors:
+    - Nashwan Adel Butt
+    - Furkan Adigüzel
+    - Aron Emmermann
+    - Caner Celik
+  Created: 2025-06-03
+  Version: 1.0
+-->
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <title>Projekt-Details</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- =============================
+     HEADER-BEREICH MIT NAVIGATION
+     ============================= -->
+<header>
+    <div class="logo">
+        <img src="Bilder/BlueShark.png" alt="Logo" class="logo-image">
+        <span class="logo-text">BlueShark</span>
+    </div>
+    <nav>
+        <a href="index.html">Home</a>
+    </nav>
+</header>
+
+<!-- =============================
+     HAUPTINHALT: PROJEKT-DETAILS
+     ============================= -->
+<main class="about">
+    <h2>Projekt-Details</h2>
+    <!-- Hier werden Projektdaten dynamisch geladen -->
+    <div id="projectDetails">Lade Projekt ...</div>
+</main>
+
+<!-- =============================
+     SCRIPT: LADEN DER PROJEKTDATEN
+     ============================= -->
+<script>
+    /**
+     * Liest die URL-Parameter, um die Projektnummer zu extrahieren.
+     */
+    const params = new URLSearchParams(window.location.search);
+    const projectNumber = params.get("number");
+
+    /**
+     * Ruft die Projektdaten von der API ab und zeigt sie im DOM an.
+     * - Wenn das Projekt existiert, werden alle relevanten Felder angezeigt.
+     * - Andernfalls erscheint eine Fehlermeldung.
+     */
+    fetch('/api/final-data')
+        .then(response => response.json())
+        .then(data => {
+            const project = data.projects.find(p => p.number == projectNumber);
+
+            const detailsContainer = document.getElementById('projectDetails');
+
+            if (project) {
+                // Dynamisches HTML mit Projektdaten
+                detailsContainer.innerHTML = `
+            <p><strong>Nummer:</strong> ${project.number}</p>
+            <p><strong>Name:</strong> ${project.name}</p>
+            <p><strong>Start:</strong> ${project.start}</p>
+            <p><strong>Ende:</strong> ${project.end}</p>
+            <p><strong>Status:</strong> ${project.statusId}</p>
+            <p><strong>Typ:</strong> ${project.typeId}</p>
+            <p><strong>Projektleiter:</strong> ${project.projectLeaderId}</p>
+            <p><strong>Priorität:</strong> ${project.priorityId}</p>
+          `;
+            } else {
+                // Fehleranzeige
+                detailsContainer.textContent = '❌ Projekt nicht gefunden.';
+            }
+        })
+        .catch(error => {
+            // Fehler beim Abruf oder Verarbeitung
+            document.getElementById('projectDetails').textContent =
+                '⚠️ Fehler beim Laden der Projektdaten.';
+            console.error('Fehler beim Abruf der Projektdaten:', error);
+        });
+</script>
+
+</body>
+</html>
