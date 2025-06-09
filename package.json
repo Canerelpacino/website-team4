@@ -1,0 +1,27 @@
+{
+  "name": "projekt",
+  "version": "1.0.0",
+  "description": "Dieses Projekt ist eine Webanwendung, die über die REST-API von **Blue Ant** Daten abruft und im Browser anzeigt. Ziel ist es, Projektdaten wie Aufgaben, Ressourcen oder Status übersichtlich und dynamisch darzustellen.\r Es soll eine informative Webseite entwickelt werden, welche eine umfassende Liste aller aktiven Projekte in BlueAnt bereitstellt, wobei definierte Daten angezeigt werden.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Canerelpacino/website-team4.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Canerelpacino/website-team4/issues"
+  },
+  "homepage": "https://github.com/Canerelpacino/website-team4#readme",
+  "dependencies": {
+    "axios": "^1.9.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "morgan": "^1.10.0"
+  }
+}
