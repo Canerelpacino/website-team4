@@ -1,0 +1,205 @@
+<!--
+  File: index.html
+  Description: Anzeige von Projektdetails für ein Blue Ant-Projekt
+  Authors:
+    - Nashwan Adel Butt
+    - Furkan Adigüzel
+    - Aron Emmermann
+    - Caner Celik
+  Created: 2025-06-03
+  Version: 1.0
+-->
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <title>Projektübersicht</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ====================================
+     HEADER: Navigation & Suchfeld
+     ==================================== -->
+<header>
+    <div class="logo">
+        <img src="Bilder/BlueShark.png" alt="Logo" class="logo-image">
+        <span class="logo-text">BlueShark</span>
+    </div>
+    <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+    </nav>
+    <input type="search" id="searchInput" placeholder="Projekt suchen...">
+</header>
+
+<!-- ====================================
+     HAUPTINHALT: Dashboard & Übersicht
+     ==================================== -->
+<main>
+    <!-- Dashboard-Kopfzeile -->
+    <section class="dashboard">
+        <h2>Project Dashboard</h2>
+    </section>
+
+    <!-- Hauptinhalt: Filter & Projektkarten -->
+    <section class="content-area">
+
+        <!-- ========== FILTERLEISTE ========== -->
+        <aside class="filters">
+            <h3>Filter</h3>
+
+            <!-- Projektfilter -->
+            <div class="filter-group">
+                <button class="filter-toggle">Project</button>
+                <div class="filter-options">
+                    <select><option>All Projects</option></select>
+                </div>
+            </div>
+
+            <!-- Projektleiterfilter -->
+            <div class="filter-group">
+                <button class="filter-toggle">Project Leader</button>
+                <div class="filter-options">
+                    <select><option>All Leaders</option></select>
+                </div>
+            </div>
+
+            <!-- Statusfilter -->
+            <div class="filter-group">
+                <button class="filter-toggle">Status</button>
+                <div class="filter-options">
+                    <label><input type="checkbox"> On track</label><br>
+                    <label><input type="checkbox"> Delayed</label><br>
+                    <label><input type="checkbox"> Critical</label>
+                </div>
+            </div>
+
+            <!-- Jahresfilter -->
+            <div class="filter-group">
+                <button class="filter-toggle">Year</button>
+                <div class="filter-options">
+                    <label><input type="checkbox"> 2025</label><br>
+                    <label><input type="checkbox"> 2024</label><br>
+                    <label><input type="checkbox"> 2023</label>
+                </div>
+            </div>
+        </aside>
+
+        <!-- ========== PROJEKTÜBERSICHT ========== -->
+        <section class="projects-section">
+            <!-- Status-Buttons -->
+            <div class="status-buttons">
+                <button>Not Started</button>
+                <button>In Progress</button>
+                <button>Completed</button>
+            </div>
+
+            <!-- Dynamisch generierte Karten -->
+            <div class="cards" id="projectCards"></div>
+        </section>
+
+    </section>
+</main>
+
+<!-- ====================================
+     SCRIPT: Projektdaten laden & anzeigen
+     ==================================== -->
+<script>
+    /** @type {Array<Object>} Enthält alle geladenen Projekte */
+    let allProjects = [];
+
+    /**
+     * Lädt alle Projekte über die API und ruft dann die Anzeige auf.
+     */
+    fetch('/api/final-data')
+        .then(res => res.json())
+        .then(data => {
+            allProjects = data.projects || [];
+            renderProjects(allProjects);
+        });
+
+    /**
+     * Rendert eine Liste von Projekten als Karten im DOM.
+     * @param {Array<Object>} projects - Die anzuzeigenden Projekte
+     */
+    function renderProjects(projects) {
+        const container = document.getElementById('projectCards');
+        container.innerHTML = ''; // Leeren
+
+        projects.forEach(project => {
+            container.insertAdjacentHTML('beforeend', `
+          <a href="project.html?number=${project.number}" class="card-link">
+            <div class="card">
+              <div class="card-header">
+                <strong>${project.number || '-'}</strong><br>
+                Projektleiter: ${escapeHTML(project.projectLeaderId || '-')}<br>
+                Status: ${escapeHTML(project.statusId || '-')}<br>
+                Projektart: ${escapeHTML(project.typeId || '-')}<br>
+                Priorität: ${escapeHTML(project.priorityId || '-')}
+              </div>
+              <div class="card-title">${escapeHTML(project.name || '-')}</div>
+              <div class="card-footer">${project.start || ''} - ${project.end || ''}</div>
+              <div class="progress-bar"></div>
+            </div>
+          </a>
+        `);
+        });
+    }
+
+    /**
+     * Wandelt Sonderzeichen in HTML-safe-Zeichen um.
+     * @param {string} str - Eingabetext
+     * @returns {string} - Escapeter HTML-Safe-Text
+     */
+    function escapeHTML(str) {
+        return String(str)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
+    }
+
+    /**
+     * Initialisiert DOM-Interaktionen wie Filteraufklappen und Live-Suche.
+     */
+    document.addEventListener("DOMContentLoaded", () => {
+        // Aufklappfunktion der Filter
+        document.querySelectorAll(".filter-toggle").forEach(button => {
+            button.addEventListener("click", () => {
+                button.parentElement.classList.toggle("active");
+            });
+        });
+
+        // Projektsuche
+        const searchInput = document.getElementById('searchInput');
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.trim().toLowerCase();
+
+            if (!query) {
+                renderProjects(allProjects);
+                return;
+            }
+
+            const filtered = allProjects.filter(p => {
+                return [
+                    p.name,
+                    p.number,
+                    p.projectLeaderId,
+                    p.statusId,
+                    p.typeId,
+                    p.priorityId
+                ].some(val =>
+                    val && val.toString().toLowerCase().includes(query)
+                );
+            });
+
+            renderProjects(filtered);
+        });
+    });
+</script>
+
+</body>
+</html>
