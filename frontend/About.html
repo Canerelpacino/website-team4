@@ -29,6 +29,7 @@
         <a href="index.html">Home</a>
         <a href="about.html" class="active">About</a>
     </nav>
+    <input type="search" id="searchInput" placeholder="Projekt suchen...">
 </header>
 
 <main>
@@ -120,6 +121,56 @@
     </section>
 
 </main>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        let searchInput = document.getElementById("searchInput");
+        let dropdown = document.createElement("div");
+        dropdown.classList.add("dropdown");
+        document.body.appendChild(dropdown);
 
+        let projects = [];
+
+        // Daten aus API abrufen
+        fetch('/api/final-data')
+            .then(response => response.json())
+            .then(data => {
+                projects = data.projects;
+            })
+            .catch(error => console.error('Fehler beim Laden der Projektdaten:', error));
+
+        searchInput.addEventListener("input", function () {
+            let searchText = this.value.trim().toLowerCase();
+            dropdown.innerHTML = ""; // Altes Dropdown leeren
+
+            if (searchText.length > 0) {
+                let filteredProjects = projects.filter(p => p.name.toLowerCase().includes(searchText));
+
+                filteredProjects.forEach(project => {
+                    let option = document.createElement("div");
+                    option.classList.add("dropdown-item");
+                    option.textContent = project.name;
+                    option.addEventListener("click", () => {
+                        window.location.href = `project.html?number=${project.number}`;
+                    });
+                    dropdown.appendChild(option);
+                });
+
+                if (filteredProjects.length > 0) {
+                    dropdown.style.display = "block";
+                } else {
+                    dropdown.style.display = "none";
+                }
+            } else {
+                dropdown.style.display = "none";
+            }
+        });
+
+        document.addEventListener("click", function (event) {
+            if (!searchInput.contains(event.target) && !dropdown.contains(event.target)) {
+                dropdown.style.display = "none";
+            }
+        });
+    });
+</script>
 </body>
 </html>

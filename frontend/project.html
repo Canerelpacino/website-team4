@@ -1,27 +1,28 @@
-<!--
-  File: project.html
-  Description: Anzeige von Projektdetails für ein Blue Ant-Projekt
-  Authors:
-    - Nashwan Adel Butt
-    - Furkan Adigüzel
-    - Aron Emmermann
-    - Caner Celik
-  Created: 2025-06-03
-  Version: 1.0
--->
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8" />
     <title>Projekt-Details</title>
     <link rel="stylesheet" href="StylesCSS/style.css" />
+    <style>
+        .button-active {
+            background-color: green !important;
+            color: white !important;
+        }
+
+        .button-inactive {
+            background-color: gray !important;
+            color: white !important;
+        }
+
+        button:disabled {
+            cursor: default;
+            opacity: 1;
+        }
+    </style>
 </head>
 <body>
 
-<!-- =============================
-     HEADER-BEREICH MIT NAVIGATION
-     ============================= -->
 <header>
     <div class="logo">
         <img src="Bilder/BlueShark.png" alt="Logo" class="logo-image">
@@ -29,63 +30,130 @@
     </div>
     <nav>
         <a href="index.html">Home</a>
+        <a href="about.html">About</a>
     </nav>
+    <input type="search" id="searchInput" placeholder="Projekt suchen...">
 </header>
 
-<!-- =============================
-     HAUPTINHALT: PROJEKT-DETAILS
-     ============================= -->
-<main class="about">
-    <h2>Projekt-Details</h2>
-    <!-- Hier werden Projektdaten dynamisch geladen -->
-    <div id="projectDetails">Lade Projekt ...</div>
+<nav class="breadcrumb2">
+    <span><a href="index.html">Home</a>><a href="index.html">All Projects</a>><a class="active"><normal id="projectName">></normal></a></span>
+</nav>
+
+<main class="container">
+    <div class="sidebar">
+        <h2>Meilensteine</h2>
+        <ul id="milestoneList"></ul>
+        <div id="projectStatusHistory"></div>
+    </div>
+
+    <div class="project-details">
+        <h2 id="projectTitle"></h2>
+        <p><strong>Project Number:</strong> <span id="projectNumber"></span></p>
+        <p><strong>Project Leader:</strong> <span id="projectLeader"></span> |
+            <strong>Zeitraum:</strong> <span id="projectStart"></span> - <span id="projectEnd"></span></p>
+
+        <p><strong>Project Information:</strong></p>
+        <p><strong>Type:</strong> <span id="projectType"></span></p>
+        <p><strong>Status:</strong> <span id="projectStatus"></span></p>
+
+        <div class="status-buttons">
+            <button id="inProgressBtn" disabled>In Progress</button>
+            <button id="onTrackBtn" disabled>On Track</button>
+            <button id="projectPriority" disabled>Priority</button>
+        </div>
+    </div>
 </main>
 
-<!-- =============================
-     SCRIPT: LADEN DER PROJEKTDATEN
-     ============================= -->
 <script>
-    /**
-     * Liest die URL-Parameter, um die Projektnummer zu extrahieren.
-     */
-    const params = new URLSearchParams(window.location.search);
-    const projectNumber = params.get("number");
+    const token = 'eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4MTgyMDE2ODYiLCJpYXQiOjE3NDc5MjA3ODgsImlzcyI6IkJsdWUgQW50wqkiLCJleHAiOjE5MDU2MDA3ODh9.UVSM95p8yh8uN_qlzxE8geSa3imJBMCwIDbuVoxDNu8';
 
-    /**
-     * Ruft die Projektdaten von der API ab und zeigt sie im DOM an.
-     * - Wenn das Projekt existiert, werden alle relevanten Felder angezeigt.
-     * - Andernfalls erscheint eine Fehlermeldung.
-     */
+    const statusColorMap = {
+        "A1 - Anfrage/Idee": "green", "C1 - Umsetzung": "green", "Z1 - Gestoppt/Zurückgestellt": "red",
+        "E1 - Abschluss": "yellow", "B3 - Planung (Gate 1)": "green", "C2 - Abnahme": "yellow",
+        "Z2 - Abgeschlossen": "green", "F1 - Revision": "yellow", "B2 - Auftragsklärung (Gate 1)": "green",
+        "B5 - Genehmigt (Gate 2)": "green", "B4 - Empfohlen (Gate 1)": "green", "Z3 - Abgelehnt": "red",
+        "A2 - Bewertung (Gate 0)": "green", "B1 - Initiierung (Gate 1)": "green"
+    };
+
     fetch('/api/final-data')
         .then(response => response.json())
         .then(data => {
+            const params = new URLSearchParams(window.location.search);
+            const projectNumber = params.get("number");
             const project = data.projects.find(p => p.number == projectNumber);
 
-            const detailsContainer = document.getElementById('projectDetails');
-
             if (project) {
-                // Dynamisches HTML mit Projektdaten
-                detailsContainer.innerHTML = `
-            <p><strong>Nummer:</strong> ${project.number}</p>
-            <p><strong>Name:</strong> ${project.name}</p>
-            <p><strong>Start:</strong> ${project.start}</p>
-            <p><strong>Ende:</strong> ${project.end}</p>
-            <p><strong>Status:</strong> ${project.statusId}</p>
-            <p><strong>Typ:</strong> ${project.typeId}</p>
-            <p><strong>Projektleiter:</strong> ${project.projectLeaderId}</p>
-            <p><strong>Priorität:</strong> ${project.priorityId}</p>
-          `;
+                document.getElementById('projectName').textContent = project.name;
+                document.getElementById('projectTitle').textContent = project.name;
+                document.getElementById('projectNumber').textContent = project.number;
+                document.getElementById('projectLeader').textContent = project.projectLeaderId;
+                document.getElementById('projectType').textContent = project.typeId;
+                document.getElementById('projectStatus').textContent = project.statusId;
+                document.getElementById('projectStart').textContent = project.start;
+                document.getElementById('projectEnd').textContent = project.end;
+                document.getElementById('projectPriority').textContent = project.priorityId;
+
+                const today = new Date();
+                const startDate = new Date(project.start);
+                const endDate = new Date(project.end);
+                const statusText = project.statusId || "";
+                const color = statusColorMap[statusText] || "gray";
+
+                const isValid = today >= startDate && today <= endDate;
+                const isStopped = statusText.includes("Gestoppt") || statusText.includes("Zurückgestellt");
+
+                const inProgressBtn = document.getElementById('inProgressBtn');
+                const onTrackBtn = document.getElementById('onTrackBtn');
+
+                // In Progress Button – farblich nach Status
+                if (color === "green") {
+                    inProgressBtn.classList.add("button-active");
+                } else if (color === "yellow") {
+                    inProgressBtn.style.backgroundColor = "gold";
+                    inProgressBtn.style.color = "#000";
+                } else {
+                    inProgressBtn.classList.add("button-inactive");
+                }
+
+                // On Track Button – wenn gültig und nicht gestoppt
+                if (isValid && !isStopped) {
+                    onTrackBtn.classList.add("button-active");
+                } else {
+                    onTrackBtn.classList.add("button-inactive");
+                }
+
+                // Meilensteine
+                const milestoneList = document.getElementById('milestoneList');
+                milestoneList.innerHTML = project.milestones.map(ms =>
+                    `<li>${ms.name} (Fortschritt: ${ms.progress}%)</li>`).join("");
+
+                // Status-Historie
+                fetch(`https://dashboard-examples.blueant.cloud/rest/v1/projects/${project.id}/statushistory`, {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                })
+                    .then(res => res.json())
+                    .then(historyData => {
+                        const statusDiv = document.getElementById('projectStatusHistory');
+                        if (Array.isArray(historyData)) {
+                            const html = historyData.map(entry => `
+                                <div class="status-entry">
+                                    <strong>${entry.status}</strong> vom ${new Date(entry.timestamp).toLocaleDateString()}
+                                </div>`).join("");
+                            statusDiv.innerHTML = `<h3>Status-Historie</h3>${html}`;
+                        } else {
+                            statusDiv.innerHTML = "<p>Keine Statushistorie verfügbar.</p>";
+                        }
+                    })
+                    .catch(() => {
+                        document.getElementById('projectStatusHistory').innerHTML =
+                            "<p>❌ Fehler beim Laden der Status-Historie.</p>";
+                    });
+
             } else {
-                // Fehleranzeige
-                detailsContainer.textContent = '❌ Projekt nicht gefunden.';
+                document.querySelector('.content').innerHTML = '<p>❌ Projekt nicht gefunden.</p>';
             }
         })
-        .catch(error => {
-            // Fehler beim Abruf oder Verarbeitung
-            document.getElementById('projectDetails').textContent =
-                '⚠️ Fehler beim Laden der Projektdaten.';
-            console.error('Fehler beim Abruf der Projektdaten:', error);
-        });
+        .catch(error => console.error('Fehler beim Laden der Projektdaten:', error));
 </script>
 
 </body>

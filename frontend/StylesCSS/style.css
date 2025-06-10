@@ -1,3 +1,6 @@
+/* ==========================
+   Allgemeine Stile
+========================== */
 body {
     font-family: system-ui, sans-serif;
     background-color: #f4f4f4;
@@ -5,6 +8,13 @@ body {
     padding: 0;
 }
 
+input[type="search"] {
+    padding: 0.4rem;
+}
+
+/* ==========================
+   Header & Navigation
+========================== */
 header {
     display: flex;
     justify-content: space-between;
@@ -15,7 +25,21 @@ header {
 }
 
 .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
     font-weight: bold;
+}
+
+.logo-image {
+    height: 40px;
+    width: auto;
+}
+
+.logo-text {
+    color: #0077c2;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 nav a {
@@ -28,15 +52,13 @@ nav a.active {
     border-bottom: 2px solid black;
 }
 
-input[type="search"] {
-    padding: 0.4rem;
-}
-
+/* ==========================
+   Hauptinhalt
+========================== */
 main {
     padding: 1rem 2rem;
 }
 
-/* Dashboard oben */
 .dashboard {
     background: #ccc;
     height: 150px;
@@ -47,7 +69,9 @@ main {
     font-size: 1.2rem;
 }
 
-/* Container für Filter + Karten */
+/* ==========================
+   Content-Bereich
+========================== */
 .content-area {
     display: flex;
     gap: 2rem;
@@ -58,16 +82,14 @@ main {
     align-items: flex-start;
 }
 
-/* Sidebar */
+/* Sidebar Filter */
 .filters {
+    width: 250px;
     padding-right: 1rem;
     border-right: 1px solid #ddd;
-    width: 250px;
     flex-shrink: 0;
-    background: transparent;
 }
 
-/* Aufklappbare Filtergruppen */
 .filter-group {
     margin-bottom: 1rem;
 }
@@ -93,28 +115,31 @@ main {
     display: block;
 }
 
-/* Projektansicht */
+/* ==========================
+   Projekte / Karten
+========================== */
 .projects-section {
     flex: 1;
     display: flex;
     flex-direction: column;
 }
 
-.status-buttons {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1rem;
-}
-
-.status-buttons button {
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-}
-
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 1rem;
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.card-link:hover .card {
+    box-shadow: 0 0 10px rgba(0,0,0,0.15);
+    transform: scale(1.01);
+    transition: 0.2s ease-in-out;
 }
 
 .card {
@@ -146,29 +171,90 @@ main {
     border-radius: 3px;
 }
 
-/* About-Seite */
-.about {
-    max-width: 800px;
-    margin: 2rem auto;
+/* ==========================
+   Status-Buttons
+========================== */
+.status-buttons {
+    display: flex;
+    gap: 1rem;
+    margin: 15px 0;
+}
+
+.status-buttons button {
+    font-weight: normal;
+    padding: 8px 16px;
+    font-size: 1rem;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.status-buttons button.active {
+    background-color: #888888;
+    color: white;
+    border: 1px solid #333;
+    box-shadow: none;
+}
+
+.status-buttons button:hover {
+    background-color: #f0f0f0;
+}
+
+#inProgressBtn,
+#onTrackBtn,
+#projectPriority {
+    width: 150px;
+    font-size: 16px;
+    color: black;
+    background: transparent;
+    border: 2px solid black;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+/* ==========================
+   Dropdown Menü
+========================== */
+.dropdown {
+    position: fixed;
+    top: 50px;
+    right: 30px;
+    width: 175px;
     background: white;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-.card-link {
-    text-decoration: none;
-    color: inherit;
-    display: block;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    border-radius: 6px;
+    display: none;
 }
 
-.card-link:hover .card {
-    box-shadow: 0 0 10px rgba(0,0,0,0.15);
-    transform: scale(1.01);
-    transition: 0.2s ease-in-out;
+.dropdown-item {
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    border-bottom: 1px solid #ddd;
 }
 
+.dropdown-item:hover {
+    background: #f0f0f0;
+}
 
-.wir {                                                  /*wir beginn*/
+.button-active {
+    background-color: green !important;
+    color: white;
+}
+
+.button-inactive {
+    background-color: gray !important;
+    color: white;
+}
+
+/* ==========================
+   About-Seite / Team
+========================== */
+.wir {
     width: 100%;
     min-height: 100vh;
     background-color: white;
@@ -176,8 +262,7 @@ main {
     flex-direction: column;
     align-items: center;
     gap: 2em;
-    padding: 20px 0% 30px;
-
+    padding: 20px 0 30px;
 }
 
 .team-container {
@@ -185,13 +270,13 @@ main {
     text-align: center;
 }
 
-.ueberschriftabout {                                   /* Das sind wir */
+.ueberschriftabout {
     font-size: 2.5rem;
     margin-bottom: 2em;
     color: black;
 }
 
-.team-grid {                                           /* 3x3 */
+.team-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2em;
@@ -202,17 +287,17 @@ main {
     flex-direction: column;
     align-items: center;
     background-color: lightblue;
-    padding: 0em;
+    padding: 1em;
     border-radius: 10px;
     transition: transform 0.3s ease;
-    margin: 20px
+    margin: 20px;
 }
 
-.teammitglied:hover {                                /* effekt nach oben ziehen */
+.teammitglied:hover {
     transform: translateY(-5px);
 }
 
-.teammitglied img {                                    /* Profilbilder*/
+.teammitglied img {
     width: 120px;
     height: 120px;
     border-radius: 50%;
@@ -230,10 +315,13 @@ main {
     font-size: 0.9rem;
 }
 
+/* ==========================
+   Projektbeschreibung
+========================== */
 .ueber {
     width: 100%;
     background-color: #f5f5f5;
-    padding: 60px 0%;
+    padding: 60px 0;
     color: #222;
 }
 
@@ -255,21 +343,78 @@ main {
     margin-bottom: 1em;
 }
 
-.logo {
+/* ==========================
+   Projekt Detailansicht
+========================== */
+.container {
     display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 1.5rem;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.sidebar {
+    width: 400px;
+    padding: 20px;
+    border-radius: 6px;
+    background-color: #ccc;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.sidebar h2 {
+    text-align: center;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    font-size: 1rem;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+}
+
+.progress {
+    color: #33cc33;
     font-weight: bold;
 }
 
-.logo-image {
-    height: 40px; /* oder je nach Bildgröße anpassen */
-    width: auto;
+.project-details {
+    flex-grow: 1;
+    background: white;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
-.logo-text {
-    color: #0077c2
-; /* schönes kräftiges Blau */
-    font-family: 'Segoe UI', sans-serif;
+.project-details h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.project-details p {
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+/* ==========================
+   Sonstige Helferklassen
+========================== */
+.highlight {
+    background-color: yellow;
+    font-weight: bold;
+    padding: 2px;
+    border-radius: 3px;
+}
+
+.breadcrumb2 {
+    margin: 1rem;
 }
