@@ -89,6 +89,71 @@ fetch(personApiUrl, {
         console.error('❌ Fehler bei zweiter API-Anfrage:', error.message);
     });
 
+function getHistory(projectId) {
+    fetch('https://dashboard-examples.blueant.cloud/rest/v1/projects/762759454/statushistory', {
+        method: 'GET',
+        headers: {
+            'Authorization': `Bearer ${token}`
+        }
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP-Fehler bei Personen-API: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            const jsonData = JSON.stringify(data, null, 2);
+            fs.writeFile(path.join(__dirname, 'projectStatusHistory.json'), jsonData, err => {
+                if (err) {
+                    console.error('❌ Fehler beim Schreiben der Meilensteine:', err);
+                } else {
+                    console.log('✅ Meilensteine erfolgreich gespeichert!');
+                }
+            });
+        })
+        .catch(error => {
+            console.error('❌ Fehler bei zweiter API-Anfrage:', error.message);
+        });
+}
+
+app.get('/api/get-history/:projectId', (req, res) => {
+    const projectId = req.params.projectId;
+    const url = `https://dashboard-examples.blueant.cloud/rest/v1/projects/${projectId}/statushistory`;
+
+    fetch(url, {
+        method: 'GET',
+        headers: { 'Authorization': `Bearer ${token}` }
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            const filePath = path.join(__dirname, `projectStatusHistory.json`);
+            fs.writeFile(filePath, JSON.stringify(data, null, 2), err => {
+                if (err) {
+                    console.error("❌ Fehler beim Speichern:", err);
+                    return res.status(500).json({ error: "Speichern fehlgeschlagen" });
+                }
+                console.log(`✅ Status-Historie gespeichert: ${filePath}`);
+                res.json({ success: true, path: filePath });
+            });
+        })
+        .catch(err => {
+            console.error("❌ Fehler beim Abruf:", err.message);
+            res.status(500).json({ error: "Abruf fehlgeschlagen" });
+        });
+});
+
+// Start Server
+app.listen(PORT, () => {
+    console.log(`✅ Server läuft auf http://localhost:${PORT}`);
+});
+
+
 
 // ==============================
 // Express: Frontend & API-Endpunkt
@@ -97,6 +162,9 @@ fetch(personApiUrl, {
 // Statische Dateien aus dem Frontend-Ordner bereitstellen
 const frontendPath = path.join(__dirname, '..', 'frontend');
 app.use(express.static(frontendPath));
+
+// 2. backend/dashboard.js explizit verfügbar machen
+app.use('/backend', express.static(__dirname));
 
 // API-Endpunkt für transformierte Daten
 const finalPath = path.join(__dirname, 'final_data.json');

@@ -53,6 +53,7 @@
             <strong>Zeitraum:</strong> <span id="projectStart"></span> - <span id="projectEnd"></span></p>
 
         <p><strong>Project Information:</strong></p>
+        <p><strong>Project-ID:</strong> <span id="projectId"></span></p>
         <p><strong>Type:</strong> <span id="projectType"></span></p>
         <p><strong>Status:</strong> <span id="projectStatus"></span></p>
 
@@ -64,97 +65,7 @@
     </div>
 </main>
 
-<script>
-    const token = 'eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI4MTgyMDE2ODYiLCJpYXQiOjE3NDc5MjA3ODgsImlzcyI6IkJsdWUgQW50wqkiLCJleHAiOjE5MDU2MDA3ODh9.UVSM95p8yh8uN_qlzxE8geSa3imJBMCwIDbuVoxDNu8';
-
-    const statusColorMap = {
-        "A1 - Anfrage/Idee": "green", "C1 - Umsetzung": "green", "Z1 - Gestoppt/Zurückgestellt": "red",
-        "E1 - Abschluss": "yellow", "B3 - Planung (Gate 1)": "green", "C2 - Abnahme": "yellow",
-        "Z2 - Abgeschlossen": "green", "F1 - Revision": "yellow", "B2 - Auftragsklärung (Gate 1)": "green",
-        "B5 - Genehmigt (Gate 2)": "green", "B4 - Empfohlen (Gate 1)": "green", "Z3 - Abgelehnt": "red",
-        "A2 - Bewertung (Gate 0)": "green", "B1 - Initiierung (Gate 1)": "green"
-    };
-
-    fetch('/api/final-data')
-        .then(response => response.json())
-        .then(data => {
-            const params = new URLSearchParams(window.location.search);
-            const projectNumber = params.get("number");
-            const project = data.projects.find(p => p.number == projectNumber);
-
-            if (project) {
-                document.getElementById('projectName').textContent = project.name;
-                document.getElementById('projectTitle').textContent = project.name;
-                document.getElementById('projectNumber').textContent = project.number;
-                document.getElementById('projectLeader').textContent = project.projectLeaderId;
-                document.getElementById('projectType').textContent = project.typeId;
-                document.getElementById('projectStatus').textContent = project.statusId;
-                document.getElementById('projectStart').textContent = project.start;
-                document.getElementById('projectEnd').textContent = project.end;
-                document.getElementById('projectPriority').textContent = project.priorityId;
-
-                const today = new Date();
-                const startDate = new Date(project.start);
-                const endDate = new Date(project.end);
-                const statusText = project.statusId || "";
-                const color = statusColorMap[statusText] || "gray";
-
-                const isValid = today >= startDate && today <= endDate;
-                const isStopped = statusText.includes("Gestoppt") || statusText.includes("Zurückgestellt");
-
-                const inProgressBtn = document.getElementById('inProgressBtn');
-                const onTrackBtn = document.getElementById('onTrackBtn');
-
-                // In Progress Button – farblich nach Status
-                if (color === "green") {
-                    inProgressBtn.classList.add("button-active");
-                } else if (color === "yellow") {
-                    inProgressBtn.style.backgroundColor = "gold";
-                    inProgressBtn.style.color = "#000";
-                } else {
-                    inProgressBtn.classList.add("button-inactive");
-                }
-
-                // On Track Button – wenn gültig und nicht gestoppt
-                if (isValid && !isStopped) {
-                    onTrackBtn.classList.add("button-active");
-                } else {
-                    onTrackBtn.classList.add("button-inactive");
-                }
-
-                // Meilensteine
-                const milestoneList = document.getElementById('milestoneList');
-                milestoneList.innerHTML = project.milestones.map(ms =>
-                    `<li>${ms.name} (Fortschritt: ${ms.progress}%)</li>`).join("");
-
-                // Status-Historie
-                fetch(`https://dashboard-examples.blueant.cloud/rest/v1/projects/${project.id}/statushistory`, {
-                    headers: { 'Authorization': `Bearer ${token}` }
-                })
-                    .then(res => res.json())
-                    .then(historyData => {
-                        const statusDiv = document.getElementById('projectStatusHistory');
-                        if (Array.isArray(historyData)) {
-                            const html = historyData.map(entry => `
-                                <div class="status-entry">
-                                    <strong>${entry.status}</strong> vom ${new Date(entry.timestamp).toLocaleDateString()}
-                                </div>`).join("");
-                            statusDiv.innerHTML = `<h3>Status-Historie</h3>${html}`;
-                        } else {
-                            statusDiv.innerHTML = "<p>Keine Statushistorie verfügbar.</p>";
-                        }
-                    })
-                    .catch(() => {
-                        document.getElementById('projectStatusHistory').innerHTML =
-                            "<p>❌ Fehler beim Laden der Status-Historie.</p>";
-                    });
-
-            } else {
-                document.querySelector('.content').innerHTML = '<p>❌ Projekt nicht gefunden.</p>';
-            }
-        })
-        .catch(error => console.error('Fehler beim Laden der Projektdaten:', error));
-</script>
+<script src="./backend/details.js" defer></script>
 
 </body>
 </html>
