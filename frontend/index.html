@@ -42,11 +42,21 @@
             <div class="filter-group">
                 <button class="filter-toggle">Status</button>
                 <div class="filter-options">
-                    <label><input type="checkbox" value="On track" /> On track</label><br />
-                    <label><input type="checkbox" value="Delayed" /> Delayed</label><br />
-                    <label><input type="checkbox" value="Critical" /> Critical</label>
+                    <label class="status-label">
+                        <input type="checkbox" value="On track" />
+                        <span class="status-dot status-ontrack"></span> On track
+                    </label><br />
+                    <label class="status-label">
+                        <input type="checkbox" value="Delayed" />
+                        <span class="status-dot status-delayed"></span> Delayed
+                    </label><br />
+                    <label class="status-label">
+                        <input type="checkbox" value="Critical" />
+                        <span class="status-dot status-critical"></span> Critical
+                    </label>
                 </div>
             </div>
+            
 
             <div class="filter-group">
                 <button class="filter-toggle">Year</button>

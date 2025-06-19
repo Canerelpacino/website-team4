@@ -423,3 +423,22 @@ main {
     padding: 5px;
     margin-top: 5px;
 }
+
+.status-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 6px;
+  }
+  
+  .status-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  
+  .status-ontrack { background-color: green; }
+  .status-delayed { background-color: yellow; }
+  .status-critical { background-color: red; }
+  
