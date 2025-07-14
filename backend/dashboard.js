@@ -31,6 +31,14 @@ const finalizedStatuses = ["Z1 - Gestoppt/Zurückgestellt", "E1 - Abschluss", "C
 
 let allProjects = [];
 
+function formatDate(dateStr) {
+    const d = new Date(dateStr);
+    const day = String(d.getDate()).padStart(2, '0');
+    const month = String(d.getMonth() + 1).padStart(2, '0');
+    const year = d.getFullYear();
+    return `${day}.${month}.${year}`;
+}
+
 function fetchProjects() {
     fetch('/api/final-data')
         .then(res => res.json())
@@ -111,7 +119,7 @@ function renderProjects(projects) {
                         Priorität: ${escapeHTML(p.priorityId)}
                     </div>
                     <div class="card-title">${escapeHTML(p.name)}</div>
-                    <div class="card-footer">${p.start} - ${p.end}</div>
+                    <div class="card-footer">${formatDate(p.start)} - ${formatDate(p.end)}</div>
                     <div class="progress-bar" style="background-color: ${color};"></div>
                 </div>
             </a>
