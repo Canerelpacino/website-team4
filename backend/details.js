@@ -22,19 +22,11 @@ function formatDate(dateStr) {
     const year = d.getFullYear();
     return `${day}.${month}.${year}`;
 }
-function formatDate(dateStr) {
-    const d = new Date(dateStr);
-    const day = String(d.getDate()).padStart(2, '0');
-    const month = String(d.getMonth() + 1).padStart(2, '0');
-    const year = d.getFullYear();
-    return `${day}.${month}.${year}`;
-}
-
 
 console.log("📦 detail.js geladen");
 
 // ==============================
-// Statusfarben
+// Farben
 // ==============================
 
 const statusColorMap = {
@@ -45,10 +37,8 @@ const statusColorMap = {
     "A2 - Bewertung (Gate 0)": "green", "B1 - Initiierung (Gate 1)": "green"
 };
 
-
-
 // ==============================
-// 🔍 Suche mit Dropdown
+// 🔍 Dropdown-Suche
 // ==============================
 function setupSearchDropdown(projects) {
     const searchInput = document.getElementById("searchInput");
@@ -95,40 +85,34 @@ function loadProjectDetails(data) {
 
     const params = new URLSearchParams(window.location.search);
     const projectNumber = params.get("number");
-
-    if (!projectNumber) {
-        console.warn("❌ Kein projectNumber in der URL gefunden.");
-        return;
-    }
+    if (!projectNumber) return;
 
     const project = data.projects.find(p => p.number === projectNumber);
-    if (!project) {
-        console.error("❌ Projekt nicht gefunden:", projectNumber);
-        return;
-    }
-    document.getElementById('projectName').textContent = project.name;
-    document.getElementById('projectTitle').textContent = project.name;
-    document.getElementById('projectNumber').textContent = project.number;
-    document.getElementById('projectLeader').textContent = project.projectLeaderId;
-    document.getElementById('projectType').textContent = project.typeId;
-    document.getElementById('projectStatus').textContent = project.statusId;
-    document.getElementById('projectStart').textContent = formatDate(project.start);
-    document.getElementById('projectEnd').textContent = formatDate(project.end);
-    document.getElementById('projectPriority').textContent = project.priorityId;
+    if (!project) return;
 
+    // Basisdaten
+    document.getElementById('projectName').textContent = project.name || "-";
+    document.getElementById('projectTitle').textContent = project.name || "-";
+    document.getElementById('projectNumber').textContent = project.number || "-";
+    document.getElementById('projectLeader').textContent = project.projectLeaderId || "-";
+    document.getElementById('projectType').textContent = project.typeId || "-";
+    document.getElementById('projectStatus').textContent = project.statusId || "-";
+    document.getElementById('projectStart').textContent = project.start ? formatDate(project.start) : "-";
+    document.getElementById('projectEnd').textContent = project.end ? formatDate(project.end) : "-";
+    document.getElementById('projectPriority').textContent = project.priorityId || "-";
+
+    // Status-Buttons
     const today = new Date();
     const startDate = new Date(project.start);
     const endDate = new Date(project.end);
-    const isValid = today >= startDate && today <= endDate;
+    const isFinalized = finalizedStatuses.includes(project.statusId);
     const isStopped = project.statusId.includes("Gestoppt") || project.statusId.includes("Zurückgestellt");
+    const isValid = today >= startDate && today <= endDate;
     const color = statusColorMap[project.statusId] || "gray";
-    const id = project.id;
+
     const inProgressBtn = document.getElementById('inProgressBtn');
     const onTrackBtn = document.getElementById('onTrackBtn');
 
-    const isFinalized = finalizedStatuses.includes(project.statusId);
-
-// In-Progress Button (z. B. grün)
     if (color === "green" && !isFinalized) {
         inProgressBtn.classList.add("button-active");
     } else if (color === "yellow") {
@@ -138,15 +122,18 @@ function loadProjectDetails(data) {
         inProgressBtn.classList.add("button-inactive");
     }
 
-
     if (isValid && !isStopped) {
         onTrackBtn.classList.add("button-active");
     } else {
         onTrackBtn.classList.add("button-inactive");
     }
 
-    // Meilensteine entfernt
-    // API-Abruf entfernt
+    // mappedCustomFields anzeigen
+    const customFieldList = document.getElementById('customFieldList');
+    const mapped = project.mappedCustomFields || {};
+    customFieldList.innerHTML = Object.entries(mapped).map(
+        ([key, val]) => `<li><strong>${key}:</strong> ${val}</li>`
+    ).join('') || '<li>Keine zusätzlichen Felder vorhanden.</li>';
 }
 
 // ==============================
@@ -156,30 +143,24 @@ document.addEventListener("DOMContentLoaded", () => {
     fetch('/api/final-data')
         .then(res => res.json())
         .then(data => {
-            if (!data.projects || !Array.isArray(data.projects)) {
-                throw new Error("Projektdaten fehlen oder sind ungültig");
-            }
+            if (!data.projects || !Array.isArray(data.projects)) throw new Error("Projektdaten ungültig");
             loadProjectDetails(data);
             setupSearchDropdown(data.projects);
-            const params = new URLSearchParams(window.location.search);
-            const projectNumber = params.get("number");
 
-            if (!projectNumber) {
-                console.warn("❌ Kein projectNumber in der URL gefunden.");
-                return;
+            const project = data.projects.find(p => p.number === new URLSearchParams(window.location.search).get("number"));
+            if (project) {
+                requestStatusHistory(project.id);
+                showStatusHistory();
             }
-
-            const project = data.projects.find(p => p.number === projectNumber);
-            if (!project) {
-                console.error("❌ Projekt nicht gefunden:", projectNumber);
-                return;
-            }
-            requestStatusHistory(project.id)
-            showStatusHistory()
         })
-        .catch(err => console.error("❌ Fehler bei Projektinitialisierung:", err));
+        .catch(err => {
+            console.error("❌ Fehler bei Projektinitialisierung:", err);
+        });
 });
 
+// ==============================
+// 📜 Statushistorie
+// ==============================
 function requestStatusHistory(projectId) {
     fetch(`/api/get-history/${projectId}`)
         .then(res => res.json())
@@ -190,9 +171,7 @@ function requestStatusHistory(projectId) {
                 console.warn("⚠️ API-Antwort ohne Erfolg:", data);
             }
         })
-        .catch(err => {
-            console.error("❌ Fehler beim Abruf der Statushistorie:", err.message);
-        });
+        .catch(err => console.error("❌ Fehler beim Abruf der Statushistorie:", err.message));
 }
 
 function showStatusHistory() {
@@ -211,10 +190,9 @@ function showStatusHistory() {
 
             document.getElementById("milestoneList").innerHTML = list || "<li>Keine Statushistorie verfügbar.</li>";
         })
+
         .catch(err => {
             console.error("❌ Fehler beim Anzeigen der Statushistorie:", err);
             document.getElementById("milestoneList").innerHTML = "<li>Fehler beim Laden der Meilensteine.</li>";
         });
 }
-
-

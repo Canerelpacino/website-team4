@@ -1,0 +1,1344 @@
+{
+  "customFields": [
+    {
+      "id": 361099077,
+      "name": "Erläuterung Cluster",
+      "type": "StructuredMemo",
+      "reportId": "361099077",
+      "required": false,
+      "active": true,
+      "contextType": "Project"
+    },
+    {
+      "id": 362059156,
+      "name": "Wichtigkeit",
+      "type": "Double",
+      "reportId": "362059156",
+      "required": false,
+      "active": true,
+      "contextType": "Project"
+    },
+    {
+      "id": 362059159,
+      "name": "Dringlichkeit",
+      "type": "Double",
+      "reportId": "362059159",
+      "required": false,
+      "active": true,
+      "contextType": "Project"
+    },
+    {
+      "id": 361511695,
+      "name": "Antwort2",
+      "type": "StructuredMemo",
+      "reportId": "361511695",
+      "required": false,
+      "active": true,
+      "contextType": "Project"
+    },
+    {
+      "id": 358638949,
+      "name": "Vertraulichkeit",
+      "type": "ListBox",
+      "reportId": "Vertraulichkeit",
+      "required": false,
+      "active": true,
+      "options": [
+        {
+          "key": "358638952",
+          "value": "Vertraulich"
+        },
+        {
+          "key": "358638954",
+          "value": "Intern"
+        }
+      ],
+      "contextType": "Project"
+    },
+    {
+      "id": 361099650,
+      "name": "Einfluss",
+      "type": "ListBox",
+      "reportId": "361099650",
+      "required": false,
+      "active": true,
+      "options": [
+        {
+          "key": "361099695",
+          "value": "+++"
+        },
+        {
+          "key": "361099697",
+          "value": "++"
+        },
+        {
+          "key": "361099699",
+          "value": "N"
+        },
+        {
+          "key": "361099701",
+          "value": "--"
+        },
+        {
+          "key": "361099703",
+          "value": "---"
+        }
+      ],
+      "contextType": "Project"
+    },
+    {
+      "id": 361099714,
+      "name": "Bemerkung (2)",
+      "type": "String",
+      "reportId": "361099714",
+      "required": false,
+      "active": true,
+      "contextType": "Project"
+    },
+    {
+      "id": 361511684,
+      "name": "Frage2",
+      "type": "StaticText",
+      "reportId": "361511684",
+      "required": false,
+      "active": true,
+      "contextType": "Project"
+    },
+    {
+      "id": 359540581,
+      "name": "Investitionssicherheit",
+      "type": "ListBox",
+      "reportId": "Investitionssicherheit",
+      "required": false,
+      "active": true,
+      "options": [
+        {
+          "key": "359669847",
+          "value": "gering"
+        },
+        {
+          "key": "360365144",
+          "value": "mittel"
+        },
+        {
+          "key": "360365146",
+          "value": "hoch"
+        },
+        {
+          "key": "360365148",
+          "value": "sehr hoch"
+        }
+      ],
+      "contextType": "Project"
+    },
+    {
+      "id": 362461073,
+      "name": "test",
+      "type": "Calculated",
+      "reportId": "362461073",
+      "required": false,
+      "active": true,
+      "contextType": "Project"
+    },
+    {
+      "id": 361511687,
+      "name": "Antwort3",
+      "type": "StructuredMemo",
+      "reportId": "361511687",
+      "required": false,
+      "active": true,
+      "contextType": "Project"
+    },
+    {
+      "id": 359540578,
+      "name": "Sicherheitsgrad",
+      "type": "ListBox",
+      "reportId": "359540578",
+      "required": false,
+      "active": true,
+      "options": [
+        {
+          "key": "359669841",
+          "value": "gering"
+        },
+        {
+          "key": "359669843",
+          "value": "mittel"
+        },
+        {
+          "key": "359669845",
+          "value": "hoch"
+        }
+      ],
+      "contextType": "Project"
+    },
+    {
+      "id": 358638956,
+      "name": "Freigabe Projektkoordination",
+      "type": "Date",
+      "reportId": "Freigabe_Projektkoordination",
+      "required": false,
+      "active": true,
+      "contextType": "Project"
+    },
+    {
+      "id": 359540323,
+      "name": "Überschrift",
+      "type": "StaticText",
+      "reportId": "359540323",
+      "required": false,
+      "active": true,
+      "contextType": "Project"
+    },
+    {
+      "id": 361099080,
+      "name": "Hinweis",
+      "type": "StaticText",
+      "reportId": "361099080",
+      "required": false,
+      "active": true,
+      "contextType": "Project"
+    },
+    {
+      "id": 362460631,
+      "name": "Expertenfaktor",
+      "type": "Double",
+      "reportId": "362460631",
+      "required": false,
+      "active": true,
+      "contextType": "Project"
+    },
+    {
+      "id": 358638959,
+      "name": "Genehmigt vom Vorstand",
+      "type": "Date",
+      "reportId": "Genehmigt_Vorstand",
+      "required": false,
+      "active": true,
+      "contextType": "Project"
+    },
+    {
+      "id": 361099095,
+      "name": "Verbundene Projekte",
+      "type": "ListBox",
+      "reportId": "361099095",
+      "required": false,
+      "active": true,
+      "options": [
+        {
+          "key": "null",
+          "value": ""
+        },
+        {
+          "key": "781562314",
+          "value": "000000000000 (0000000000)"
+        },
+        {
+          "key": "783943326",
+          "value": "08.07test (99999)"
+        },
+        {
+          "key": "781562754",
+          "value": "1 (1)"
+        },
+        {
+          "key": "781699326",
+          "value": "1111 (1111)"
+        },
+        {
+          "key": "691105914",
+          "value": "1224 (00883)"
+        },
+        {
+          "key": "783812027",
+          "value": "123222222a (123222222)"
+        },
+        {
+          "key": "781562877",
+          "value": "2 (2)"
+        },
+        {
+          "key": "760631698",
+          "value": "23421341234213 (00916)"
+        },
+        {
+          "key": "361533291",
+          "value": "24213412341234 (00730)"
+        },
+        {
+          "key": "360242208",
+          "value": "7 - Prüfen rechtliche Rahmen (00694)"
+        },
+        {
+          "key": "360242342",
+          "value": "8- Marketing-Strategie USA (00695)"
+        },
+        {
+          "key": "781562157",
+          "value": "a (a)"
+        },
+        {
+          "key": "781562034",
+          "value": "abcdefgh (123456789abcdfgh)"
+        },
+        {
+          "key": "358138986",
+          "value": "Abrechnungsprojekt (00615)"
+        },
+        {
+          "key": "760746014",
+          "value": "Abschaltung von Yuuvis (00923)"
+        },
+        {
+          "key": "361514834",
+          "value": "AN.Bau-Projekt 3 (00727)"
+        },
+        {
+          "key": "359672355",
+          "value": "AN-Bau 2 (00686)"
+        },
+        {
+          "key": "393912234",
+          "value": "AN-Bau 2020 agil (00772)"
+        },
+        {
+          "key": "762092697",
+          "value": "AN-Bau 2020 agil2 (40)"
+        },
+        {
+          "key": "762092563",
+          "value": "AN-Bau 2020 agil3 (32)"
+        },
+        {
+          "key": "361135228",
+          "value": "AN-Bau 3 (00719)"
+        },
+        {
+          "key": "361695535",
+          "value": "An-Bau-Projekt 4 (00731)"
+        },
+        {
+          "key": "362754397",
+          "value": "An-Bau-Projekt 5 (00768)"
+        },
+        {
+          "key": "419345954",
+          "value": "An-Bau-Projekt 6 (00776)"
+        },
+        {
+          "key": "763022236",
+          "value": "Beispiel1234567 (00962)"
+        },
+        {
+          "key": "362521097",
+          "value": "Beispiel 2019_02 (00741)"
+        },
+        {
+          "key": "359671690",
+          "value": "Beispielprojekt 2017 (00685)"
+        },
+        {
+          "key": "432648874",
+          "value": "Beispiel-Projekt 2020 (00784)"
+        },
+        {
+          "key": "358397196",
+          "value": "Beispielprojekt HH 2013/3 (00629)"
+        },
+        {
+          "key": "760869396",
+          "value": "BenutzerdokumentationTest (00926)"
+        },
+        {
+          "key": "362077236",
+          "value": "Beratungsprojekt 2018 (00733)"
+        },
+        {
+          "key": "357952391",
+          "value": "Beratungsprojekt pro (00595)"
+        },
+        {
+          "key": "754078594",
+          "value": "BestTestProject (00584)"
+        },
+        {
+          "key": "360817087",
+          "value": "BKB Demo 1 (00712)"
+        },
+        {
+          "key": "760415834",
+          "value": "Blexi (75)"
+        },
+        {
+          "key": "762093314",
+          "value": "BLEXI5 (750)"
+        },
+        {
+          "key": "762092553",
+          "value": "BlexiNeu (53)"
+        },
+        {
+          "key": "324",
+          "value": "Blue Ant (00016)"
+        },
+        {
+          "key": "254417302",
+          "value": "Blue Ant 5.2SPI-5.3 (00425)"
+        },
+        {
+          "key": "782754409",
+          "value": "Build3X (123456)"
+        },
+        {
+          "key": "782754586",
+          "value": "Build4X (1234567)"
+        },
+        {
+          "key": "783943626",
+          "value": "Build Test 7.8.2024 (310333)"
+        },
+        {
+          "key": "760746008",
+          "value": "cem01 (100)"
+        },
+        {
+          "key": "760746258",
+          "value": "Cem02 (101)"
+        },
+        {
+          "key": "760746742",
+          "value": "Cem07 (110)"
+        },
+        {
+          "key": "348709161",
+          "value": "CRM-Blue Ant (00502)"
+        },
+        {
+          "key": "360955874",
+          "value": "Customer Project (00714)"
+        },
+        {
+          "key": "777472364",
+          "value": "ddd (ff)"
+        },
+        {
+          "key": "357715324",
+          "value": "Demo_Programm (00577)"
+        },
+        {
+          "key": "357715444",
+          "value": "Demo_klassisch_TP (00578)"
+        },
+        {
+          "key": "357953507",
+          "value": "Demo 2 - pro (00596)"
+        },
+        {
+          "key": "357980788",
+          "value": "Demo agile Detailplanung (00603)"
+        },
+        {
+          "key": "357712106",
+          "value": "Demoprojekt HBA (P11-357)"
+        },
+        {
+          "key": "357719765",
+          "value": "TP (00589)"
+        },
+        {
+          "key": "362744994",
+          "value": "Demo-Projekt PTA (00754)"
+        },
+        {
+          "key": "357954634",
+          "value": "Demo TU Projekt (00598)"
+        },
+        {
+          "key": "358331532",
+          "value": "Dienstagsprojekt 2013 (00624)"
+        },
+        {
+          "key": "419344634",
+          "value": "Dies ist ein neuer Projektname3345 (123854)"
+        },
+        {
+          "key": "360953964",
+          "value": "Dossier XYZ (00713)"
+        },
+        {
+          "key": "760869642",
+          "value": "Düster_!.ß%$ Test (00928)"
+        },
+        {
+          "key": "362461742",
+          "value": "eAkte 2019 (00736)"
+        },
+        {
+          "key": "361371193",
+          "value": "Erneuerung 2018 agil (00721)"
+        },
+        {
+          "key": "362720734",
+          "value": "Erneuerung 2019 (00747)"
+        },
+        {
+          "key": "362721122",
+          "value": "Erneuerung 2019 agil (00748)"
+        },
+        {
+          "key": "437742854",
+          "value": "Erneuerung 2020 (00787)"
+        },
+        {
+          "key": "437743264",
+          "value": "Erneuerung 2020 agil (00788)"
+        },
+        {
+          "key": "560354014",
+          "value": "Erneuerung 2021 (00829)"
+        },
+        {
+          "key": "560354794",
+          "value": "Erneuerung 2021 agil (00830)"
+        },
+        {
+          "key": "362753394",
+          "value": "Example Project 201966 (00766)"
+        },
+        {
+          "key": "760415654",
+          "value": "Excel (71)"
+        },
+        {
+          "key": "762631774",
+          "value": "Gregor ist der Beste (888547564)"
+        },
+        {
+          "key": "760992366",
+          "value": "Guter Witz: 24; Besser: 25 (00932)"
+        },
+        {
+          "key": "761603194",
+          "value": "Hallo (00937)"
+        },
+        {
+          "key": "359537978",
+          "value": "Hauptprojekt (00680)"
+        },
+        {
+          "key": "359539340",
+          "value": "Teilprojekt (00682)"
+        },
+        {
+          "key": "357994578",
+          "value": "Hauptprojekt_Gruppe_06 (00609)"
+        },
+        {
+          "key": "357994695",
+          "value": "Demo-Teilprojekt 1 (agil) (00610)"
+        },
+        {
+          "key": "357994884",
+          "value": "Demo-Teilprojekt 2 (agil) (00612)"
+        },
+        {
+          "key": "358976945",
+          "value": "Hauptprojekt/Programm (00671)"
+        },
+        {
+          "key": "358977062",
+          "value": "Teilprojekt A (00672)"
+        },
+        {
+          "key": "358977195",
+          "value": "Teilprojekt B (00673)"
+        },
+        {
+          "key": "773887258",
+          "value": "HTW Testanlage 333.1 (00966)"
+        },
+        {
+          "key": "773887439",
+          "value": "HTW Testanlage 333.2 (00967)"
+        },
+        {
+          "key": "773887315",
+          "value": "HTW Testanlage 333.3 (00968)"
+        },
+        {
+          "key": "773887678",
+          "value": "HTW Testanlage 333.4 (00969)"
+        },
+        {
+          "key": "773887801",
+          "value": "HTW Testanlage 333.5 (00970)"
+        },
+        {
+          "key": "762758608",
+          "value": "Ich teste den Tag (00956)"
+        },
+        {
+          "key": "360243300",
+          "value": "IT Integration (agil) (00699)"
+        },
+        {
+          "key": "786180326",
+          "value": "iv projekte (12334)"
+        },
+        {
+          "key": "786180466",
+          "value": "iv projekte1 (1233456)"
+        },
+        {
+          "key": "362747567",
+          "value": "K-Example 1 (00760)"
+        },
+        {
+          "key": "362747861",
+          "value": "K-Example-Design (00761)"
+        },
+        {
+          "key": "362748014",
+          "value": "K-Example 2 (00762)"
+        },
+        {
+          "key": "763022538",
+          "value": "Ludwig  (7134)"
+        },
+        {
+          "key": "762759805",
+          "value": "Ludwig <3 (00960)"
+        },
+        {
+          "key": "357720979",
+          "value": "M4R - Demo (00591)"
+        },
+        {
+          "key": "359539603",
+          "value": "Mein agiles Projekt 2016 (00683)"
+        },
+        {
+          "key": "359836637",
+          "value": "Mein Beratungsprojekt 2016 (00689)"
+        },
+        {
+          "key": "357995390",
+          "value": "Mein Projekt 123 (00614)"
+        },
+        {
+          "key": "358558509",
+          "value": "Mein Projekt 2014/2 (00637)"
+        },
+        {
+          "key": "359941201",
+          "value": "Mein Projekt 556 (00690)"
+        },
+        {
+          "key": "361511761",
+          "value": "Mein Webinar Projekt 2018 (00725)"
+        },
+        {
+          "key": "760631822",
+          "value": "MoinMeister (00917)"
+        },
+        {
+          "key": "760631946",
+          "value": "MoinMeisterss (00918)"
+        },
+        {
+          "key": "760632074",
+          "value": "MoinMeisterxd (00919)"
+        },
+        {
+          "key": "760632070",
+          "value": "MoinMeisterxdsa222 (00920)"
+        },
+        {
+          "key": "360513654",
+          "value": "My agile project (00705)"
+        },
+        {
+          "key": "362752226",
+          "value": "My Hybrid Project 2020/21 (00764)"
+        },
+        {
+          "key": "359079411",
+          "value": "My new Project (00676)"
+        },
+        {
+          "key": "356716219",
+          "value": "Neues Projekt (FOM) (00556)"
+        },
+        {
+          "key": "358637300",
+          "value": "Neues Projekt 140217 (00651)"
+        },
+        {
+          "key": "357713270",
+          "value": "Neues Projekt 2012_4 (00573)"
+        },
+        {
+          "key": "361100434",
+          "value": "Neues Projekt 2018 (00716)"
+        },
+        {
+          "key": "362459274",
+          "value": "Neues Projekt 2019 (00734)"
+        },
+        {
+          "key": "356451667",
+          "value": "New Project 2012 (00543)"
+        },
+        {
+          "key": "361533314",
+          "value": "New Project 2018-02 (00729)"
+        },
+        {
+          "key": "357981594",
+          "value": "New Project 2334 (00605)"
+        },
+        {
+          "key": "357908923",
+          "value": "Orga-1 Prj (00592)"
+        },
+        {
+          "key": "358328761",
+          "value": "Panic Demo (00620)"
+        },
+        {
+          "key": "358975064",
+          "value": "PMO Support Teil 2 (00669)"
+        },
+        {
+          "key": "359095704",
+          "value": "Programm: Windpark Süd (00678)"
+        },
+        {
+          "key": "357977071",
+          "value": "Anlage 1 (00601)"
+        },
+        {
+          "key": "358571979",
+          "value": "Anlage 2 (00641)"
+        },
+        {
+          "key": "358744877",
+          "value": "Anlage 3 (00663)"
+        },
+        {
+          "key": "358922858",
+          "value": "Annex 4 (00667)"
+        },
+        {
+          "key": "760869259",
+          "value": "Project_Test (00927)"
+        },
+        {
+          "key": "807154218",
+          "value": "Project BlueBridge [Team 2] (01001)"
+        },
+        {
+          "key": "785390746",
+          "value": "Projekt8472098420 (842098042)"
+        },
+        {
+          "key": "361510094",
+          "value": "Projekt RT2 (00722)"
+        },
+        {
+          "key": "762758914",
+          "value": "que es la vida (00957)"
+        },
+        {
+          "key": "762631474",
+          "value": "que tal eszas (00951)"
+        },
+        {
+          "key": "760631574",
+          "value": "sadfasdfsadfsadf (00915)"
+        },
+        {
+          "key": "358637625",
+          "value": "SE Prj 01 (00652)"
+        },
+        {
+          "key": "223639080",
+          "value": "Softwarefarbik (00381)"
+        },
+        {
+          "key": "760746135",
+          "value": "Spuren von Yuuvis aus der Geschichte löschen (00924)"
+        },
+        {
+          "key": "762757734",
+          "value": "te amo amor (00953)"
+        },
+        {
+          "key": "762757874",
+          "value": "te amo carolina (00954)"
+        },
+        {
+          "key": "357920968",
+          "value": "Template Beispiel 1 (00593)"
+        },
+        {
+          "key": "761602821",
+          "value": "test (00934)"
+        },
+        {
+          "key": "762505517",
+          "value": "Test_gruppe3 (950)"
+        },
+        {
+          "key": "762379334",
+          "value": "Test123456789102 (0094412421412)"
+        },
+        {
+          "key": "762216416",
+          "value": "Test12345679 (00945)"
+        },
+        {
+          "key": "761602678",
+          "value": "test2 (00935)"
+        },
+        {
+          "key": "762093474",
+          "value": "Test 234 (00941)"
+        },
+        {
+          "key": "762215794",
+          "value": "Test 2345 (00942)"
+        },
+        {
+          "key": "783811129",
+          "value": "Test2-hallo33331123 (008101)"
+        },
+        {
+          "key": "523253554",
+          "value": "Test2-hallo333311269 (00810)"
+        },
+        {
+          "key": "761603059",
+          "value": "test3 (00936)"
+        },
+        {
+          "key": "760415957",
+          "value": "test5 (54)"
+        },
+        {
+          "key": "760746986",
+          "value": "testCem03 (200)"
+        },
+        {
+          "key": "785256749",
+          "value": "TestProjekt 3242355363 (535353535433)"
+        },
+        {
+          "key": "785256626",
+          "value": "TestProjekt 32423563 (5353535353)"
+        },
+        {
+          "key": "785389486",
+          "value": "TestProjekt 32435563 (53.6)"
+        },
+        {
+          "key": "785389326",
+          "value": "TestProjekt 3243563 (53.5)"
+        },
+        {
+          "key": "785256873",
+          "value": "TestProjekt 3244323563 (535353534353)"
+        },
+        {
+          "key": "785389048",
+          "value": "TestProjekt 32444323563 (5350000000000)"
+        },
+        {
+          "key": "785389186",
+          "value": "TestProjekt 324443563 (535)"
+        },
+        {
+          "key": "785257006",
+          "value": "TestProjekt 3244fs323563 (53535fs4000000)"
+        },
+        {
+          "key": "785389626",
+          "value": "TestProjekt 3263 (43253.6)"
+        },
+        {
+          "key": "785390046",
+          "value": "TestProjekt 342422435563 (3353.6)"
+        },
+        {
+          "key": "785389766",
+          "value": "TestProjekt 363 (5533.6)"
+        },
+        {
+          "key": "785390186",
+          "value": "TestProjekt 42363 (555533.6)"
+        },
+        {
+          "key": "785389906",
+          "value": "TestProjekt 6666 (575753.6)"
+        },
+        {
+          "key": "786179126",
+          "value": "testtest1 (98765)"
+        },
+        {
+          "key": "786178986",
+          "value": "testtest12 (9876)"
+        },
+        {
+          "key": "762757857",
+          "value": "TFUN2 (00955)"
+        },
+        {
+          "key": "357716846",
+          "value": "Umzugsprojekt 2012 (00582)"
+        },
+        {
+          "key": "358559076",
+          "value": "Unsere SE (00638)"
+        },
+        {
+          "key": "361510634",
+          "value": "Webinar Demo 2018 (00723)"
+        },
+        {
+          "key": "357718557",
+          "value": "Webinar-Projekt 2013 (00585)"
+        },
+        {
+          "key": "359670597",
+          "value": "Wichtiges Projekt 2016 (00684)"
+        },
+        {
+          "key": "358975658",
+          "value": "Windows 12 (00670)"
+        },
+        {
+          "key": "760991254",
+          "value": "yuuvis _äöü,;!?ß (00930)"
+        }
+      ],
+      "contextType": "Project"
+    },
+    {
+      "id": 360956315,
+      "name": "Clusterzuordnung",
+      "type": "ListBox",
+      "reportId": "360956315",
+      "required": false,
+      "active": true,
+      "options": [
+        {
+          "key": "null",
+          "value": "kein Clusterbezug"
+        },
+        {
+          "key": "360956335",
+          "value": "MARisk"
+        },
+        {
+          "key": "360956337",
+          "value": "Innovation"
+        },
+        {
+          "key": "361099075",
+          "value": "Betrieb"
+        }
+      ],
+      "contextType": "Project"
+    },
+    {
+      "id": 359669867,
+      "name": "Sicherheits-Level",
+      "type": "ListBox",
+      "reportId": "Sicherheits-Level",
+      "required": false,
+      "active": true,
+      "options": [
+        {
+          "key": "null",
+          "value": ""
+        },
+        {
+          "key": "1",
+          "value": "Rot"
+        },
+        {
+          "key": "2",
+          "value": "Gelb"
+        },
+        {
+          "key": "3",
+          "value": "Grün"
+        }
+      ],
+      "contextType": "Project"
+    },
+    {
+      "id": 362754175,
+      "name": "Referenz-Projekt",
+      "type": "Boolean",
+      "reportId": "362754175",
+      "required": false,
+      "active": true,
+      "contextType": "Project"
+    },
+    {
+      "id": 361511721,
+      "name": "Frage3",
+      "type": "StaticText",
+      "reportId": "361511721",
+      "required": false,
+      "active": true,
+      "contextType": "Project"
+    },
+    {
+      "id": 359080001,
+      "name": "MyField",
+      "type": "ListBox",
+      "reportId": "359080001",
+      "required": false,
+      "active": true,
+      "options": [
+        {
+          "key": "null",
+          "value": ""
+        },
+        {
+          "key": "1",
+          "value": "Rot"
+        },
+        {
+          "key": "2",
+          "value": "Gelb"
+        },
+        {
+          "key": "3",
+          "value": "Grün"
+        }
+      ],
+      "contextType": "Project"
+    },
+    {
+      "id": 361511659,
+      "name": "Hinweis zum DSGVO",
+      "type": "StaticText",
+      "reportId": "361511659",
+      "required": false,
+      "active": true,
+      "contextType": "Project"
+    },
+    {
+      "id": 361511655,
+      "name": "Hinweis zum DSG-VO",
+      "type": "String",
+      "reportId": "361511655",
+      "required": false,
+      "active": true,
+      "contextType": "Project"
+    },
+    {
+      "id": 359669852,
+      "name": "Pflichtprojekt",
+      "type": "Memo",
+      "reportId": "359669852",
+      "required": false,
+      "active": true,
+      "contextType": "Project"
+    },
+    {
+      "id": 358418867,
+      "name": "Relevanz Reporting",
+      "type": "ListBox",
+      "reportId": "Relevanz_Reporting",
+      "required": false,
+      "active": true,
+      "options": [
+        {
+          "key": "null",
+          "value": "--bitte wählen--"
+        },
+        {
+          "key": "358418870",
+          "value": "Ja"
+        },
+        {
+          "key": "358418872",
+          "value": "Nein"
+        }
+      ],
+      "contextType": "Project"
+    },
+    {
+      "id": 358638926,
+      "name": "Strategiebeitrag",
+      "type": "ListBox",
+      "reportId": "Strategiebeitrag",
+      "required": false,
+      "active": true,
+      "options": [
+        {
+          "key": "358638943",
+          "value": "hoch"
+        },
+        {
+          "key": "358638945",
+          "value": "mittel"
+        },
+        {
+          "key": "358638947",
+          "value": "niedrig"
+        },
+        {
+          "key": "808993519",
+          "value": "sehr niedrig"
+        }
+      ],
+      "contextType": "Project"
+    },
+    {
+      "id": 359540575,
+      "name": "Innovationsgrad",
+      "type": "ListBox",
+      "reportId": "Innovationsgrad",
+      "required": false,
+      "active": true,
+      "options": [
+        {
+          "key": "359669835",
+          "value": "gering"
+        },
+        {
+          "key": "359669837",
+          "value": "mittel"
+        },
+        {
+          "key": "359669839",
+          "value": "hoch"
+        },
+        {
+          "key": "360365142",
+          "value": "sehr hoch"
+        }
+      ],
+      "contextType": "Project"
+    },
+    {
+      "id": 361511736,
+      "name": "Frage4",
+      "type": "StaticText",
+      "reportId": "361511736",
+      "required": false,
+      "active": true,
+      "contextType": "Project"
+    },
+    {
+      "id": 360365132,
+      "name": "Score",
+      "type": "Calculated",
+      "reportId": "Score",
+      "required": false,
+      "active": true,
+      "contextType": "Project"
+    },
+    {
+      "id": 361877735,
+      "name": "Hinweis_2",
+      "type": "StaticText",
+      "reportId": "361877735",
+      "required": false,
+      "active": true,
+      "contextType": "Project"
+    },
+    {
+      "id": 357720612,
+      "name": "Projektranking",
+      "type": "Long",
+      "reportId": "357720612",
+      "required": false,
+      "active": true,
+      "contextType": "Project"
+    },
+    {
+      "id": 361511675,
+      "name": "Antwort1",
+      "type": "StructuredMemo",
+      "reportId": "361511675",
+      "required": false,
+      "active": true,
+      "contextType": "Project"
+    },
+    {
+      "id": 361511668,
+      "name": "Antwort4",
+      "type": "StructuredMemo",
+      "reportId": "361511668",
+      "required": false,
+      "active": true,
+      "contextType": "Project"
+    },
+    {
+      "id": 361099708,
+      "name": "2. Person",
+      "type": "String",
+      "reportId": "361099708",
+      "required": false,
+      "active": true,
+      "contextType": "Project"
+    },
+    {
+      "id": 532205505,
+      "name": "Klassifikation",
+      "type": "ListBox",
+      "reportId": "532205505",
+      "required": false,
+      "active": true,
+      "options": [
+        {
+          "key": "532205508",
+          "value": "initial project"
+        },
+        {
+          "key": "532205510",
+          "value": "follow-up-project"
+        }
+      ],
+      "contextType": "Project"
+    },
+    {
+      "id": 358380582,
+      "name": "PMO-Relevanz",
+      "type": "Boolean",
+      "reportId": "358380582",
+      "required": false,
+      "active": true,
+      "contextType": "Project"
+    },
+    {
+      "id": 361099647,
+      "name": "1. Person",
+      "type": "String",
+      "reportId": "361099647",
+      "required": false,
+      "active": true,
+      "contextType": "Project"
+    },
+    {
+      "id": 361099711,
+      "name": "Einfluss (2)",
+      "type": "ListBox",
+      "reportId": "361099711",
+      "required": false,
+      "active": true,
+      "options": [
+        {
+          "key": "null",
+          "value": ""
+        }
+      ],
+      "contextType": "Project"
+    },
+    {
+      "id": 358400224,
+      "name": "Expertenlevel",
+      "type": "ListBox",
+      "reportId": "358400224",
+      "required": false,
+      "active": true,
+      "options": [
+        {
+          "key": "null",
+          "value": "Bitte Experten-Level eintragen ..."
+        },
+        {
+          "key": "358400227",
+          "value": "Anfänger"
+        },
+        {
+          "key": "358400229",
+          "value": "Fortgeschritten"
+        },
+        {
+          "key": "358400231",
+          "value": "Experten"
+        },
+        {
+          "key": "362460605",
+          "value": "Performer"
+        }
+      ],
+      "contextType": "Project"
+    },
+    {
+      "id": 361099641,
+      "name": "Stakeholder-Übersicht",
+      "type": "StaticText",
+      "reportId": "361099641",
+      "required": false,
+      "active": true,
+      "contextType": "Project"
+    },
+    {
+      "id": 361099705,
+      "name": "Bemerkung (1)",
+      "type": "String",
+      "reportId": "361099705",
+      "required": false,
+      "active": true,
+      "contextType": "Project"
+    },
+    {
+      "id": 362059304,
+      "name": "Wirtschaftlichkeit",
+      "type": "Double",
+      "reportId": "362059304",
+      "required": false,
+      "active": true,
+      "contextType": "Project"
+    },
+    {
+      "id": 361511665,
+      "name": "Frage1",
+      "type": "StaticText",
+      "reportId": "361511665",
+      "required": false,
+      "active": true,
+      "contextType": "Project"
+    },
+    {
+      "id": 359254934,
+      "name": "Ampel TEST",
+      "type": "ListBox",
+      "reportId": "359254934",
+      "required": false,
+      "active": true,
+      "options": [
+        {
+          "key": "null",
+          "value": ""
+        },
+        {
+          "key": "1",
+          "value": "Rot"
+        },
+        {
+          "key": "2",
+          "value": "Gelb"
+        },
+        {
+          "key": "3",
+          "value": "Grün"
+        }
+      ],
+      "contextType": "Project"
+    }
+  ],
+  "status": {
+    "name": "OK",
+    "code": 200
+  }
+}

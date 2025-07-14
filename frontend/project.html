@@ -36,31 +36,37 @@
 </header>
 
 <nav class="breadcrumb2">
-    <span><a href="index.html">Home</a>><a href="index.html">All Projects</a>><a class="active"><normal id="projectName">></normal></a></span>
+    <span><a href="index.html">Home</a> > <a href="index.html">All Projects</a> > <a class="active"><normal id="projectName">></normal></a></span>
 </nav>
 
 <main class="container">
-    <div class="sidebar">
-        <h2>Meilensteine</h2>
-        <ul id="milestoneList"></ul>
-        <div id="projectStatusHistory"></div>
+    <div class="project-top">
+        <div class="sidebar">
+            <h2>Meilensteine</h2>
+            <ul id="milestoneList"></ul>
+        </div>
+
+        <div class="project-details">
+            <h2 id="projectTitle"></h2>
+            <p><strong>Project Number:</strong> <span id="projectNumber"></span></p>
+            <p><strong>Project Leader:</strong> <span id="projectLeader"></span> |
+                <strong>Zeitraum:</strong> <span id="projectStart"></span> - <span id="projectEnd"></span></p>
+
+            <p><strong>Project Information:</strong></p>
+            <p><strong>Type:</strong> <span id="projectType"></span></p>
+            <p><strong>Status:</strong> <span id="projectStatus"></span></p>
+
+            <div class="status-buttons">
+                <button id="inProgressBtn" disabled>In Progress</button>
+                <button id="onTrackBtn" disabled>On Track</button>
+                <button id="projectPriority" disabled>Priority</button>
+            </div>
+        </div>
     </div>
 
-    <div class="project-details">
-        <h2 id="projectTitle"></h2>
-        <p><strong>Project Number:</strong> <span id="projectNumber"></span></p>
-        <p><strong>Project Leader:</strong> <span id="projectLeader"></span> |
-            <strong>Zeitraum:</strong> <span id="projectStart"></span> - <span id="projectEnd"></span></p>
-
-        <p><strong>Project Information:</strong></p>
-        <p><strong>Type:</strong> <span id="projectType"></span></p>
-        <p><strong>Status:</strong> <span id="projectStatus"></span></p>
-
-        <div class="status-buttons">
-            <button id="inProgressBtn" disabled>In Progress</button>
-            <button id="onTrackBtn" disabled>On Track</button>
-            <button id="projectPriority" disabled>Priority</button>
-        </div>
+    <div class="custom-fields-section">
+        <h3>Weitere Projektdaten</h3>
+        <ul id="customFieldList"></ul>
     </div>
 </main>
 

@@ -10,13 +10,8 @@
  *   - Furkan Adigüzel
  *   - Caner Celik
  */
-
 const fs = require('fs');
 const path = require('path');
-
-/* =========================================
-   MAPPING: Prioritäten, Typen & Status
-   ========================================= */
 
 const priorityMap = {
     4: 'A-Projekt',
@@ -54,12 +49,24 @@ const statusMap = {
     525932360: 'B1 - Initiierung (Gate 1)'
 };
 
-/**
- * Führt die Umwandlung der Projektdaten aus:
- * - Ersetzt IDs durch lesbare Texte
- * - Führt Zählung der Änderungen
- * - Schreibt Ergebnis in final_data.json
- */
+const customFieldDefs = require('./response_1752503083964.json').customFields;
+
+function mapCustomFields(customValues = {}) {
+    const mapped = {};
+    for (const [fieldId, value] of Object.entries(customValues)) {
+        const def = customFieldDefs.find(f => String(f.id) === fieldId);
+        if (!def) continue;
+
+        if (def.type === "ListBox") {
+            const match = def.options?.find(opt => String(opt.key) === String(value));
+            mapped[def.name] = match ? match.value : value;
+        } else {
+            mapped[def.name] = value;
+        }
+    }
+    return mapped;
+}
+
 function transformProjectData() {
     const projectPath = path.join(__dirname, 'project_data.json');
     const customerPath = path.join(__dirname, 'customer_data.json');
@@ -73,39 +80,25 @@ function transformProjectData() {
     const projectData = JSON.parse(rawProjects);
     const customerData = JSON.parse(rawCustomers);
 
-    // Validierung der JSON-Struktur
     if (!Array.isArray(projectData.projects) || !Array.isArray(customerData.persons)) {
         console.error("❌ Ungültige Datenstruktur in den JSON-Dateien.");
         return;
     }
 
-    /**
-     * Gibt den vollständigen Namen zu einer Personen-ID zurück.
-     * @param {number|string} id - Personen-ID
-     * @returns {string} - Vollständiger Name oder Original-ID
-     */
     function getFullNameById(id) {
         const person = customerData.persons.find(p => p.id === id);
         return person ? `${person.firstname} ${person.lastname}` : id;
     }
 
-    // Änderungszähler
     let changedPriorities = 0;
     let leaderIdsChanged = 0;
     let typeChanged = 0;
     let statusChanged = 0;
 
-    // Transformation der Projektdaten
     const transformed = projectData.projects.map(p => {
         if (priorityMap.hasOwnProperty(p.priorityId)) {
             p.priorityId = priorityMap[p.priorityId];
             changedPriorities++;
-        }
-
-        const fullName = getFullNameById(p.projectLeaderId);
-        if (fullName !== p.projectLeaderId) {
-            p.projectLeaderId = fullName;
-            leaderIdsChanged++;
         }
 
         if (typeMap.hasOwnProperty(p.typeId)) {
@@ -118,15 +111,24 @@ function transformProjectData() {
             statusChanged++;
         }
 
+        const fullName = getFullNameById(p.projectLeaderId);
+        if (fullName !== p.projectLeaderId) {
+            p.projectLeaderId = fullName;
+            leaderIdsChanged++;
+        }
+
+        // 🔥 Mapping für benutzerdefinierte Felder
+        if (p.customFields) {
+            p.mappedCustomFields = mapCustomFields(p.customFields);
+        }
+
         return p;
     });
 
-    // Ausgabe schreiben
     fs.writeFileSync(outputPath, JSON.stringify({ projects: transformed }, null, 2), 'utf-8');
 
     console.log("✅ Final transformierte Daten gespeichert in:", outputPath);
 
-    // Konsolenausgabe der Änderungsergebnisse
     changedPriorities > 0
         ? console.log(`✅ ${changedPriorities} Projekt-Prioritäten wurden erfolgreich überschrieben.`)
         : console.warn("⚠️ Keine Prioritäten wurden geändert.");
@@ -144,5 +146,4 @@ function transformProjectData() {
         : console.warn("⚠️ Keine statusId-Werte wurden angepasst.");
 }
 
-// Modul-Export für externe Verwendung
 module.exports = { transformProjectData };
