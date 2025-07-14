@@ -106,7 +106,6 @@ function loadProjectDetails(data) {
         console.error("❌ Projekt nicht gefunden:", projectNumber);
         return;
     }
-    document.getElementById('projectId').textContent = project.id;
     document.getElementById('projectName').textContent = project.name;
     document.getElementById('projectTitle').textContent = project.name;
     document.getElementById('projectNumber').textContent = project.number;
