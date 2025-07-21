@@ -1138,7 +1138,7 @@
     },
     {
       "id": 360365132,
-      "name": "Score",
+      "name": "Scoring + DSGVO",
       "type": "Calculated",
       "reportId": "Score",
       "required": false,

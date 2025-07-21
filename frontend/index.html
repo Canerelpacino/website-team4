@@ -1,55 +1,94 @@
+<!--
+  File: index.html
+  Description: Anzeige von Projekte die in Blue-Ant existieren
+  Authors:
+    - Nashwan Adel Butt
+    - Furkan Adigüzel
+    - Aron Emmermann
+    - Caner Celik
+  Created: 2025-07-17
+  Version: 1.0
+-->
 <!DOCTYPE html>
 <html lang="de">
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Projektübersicht</title>
+
+    <!-- Projekt CSS einbinden -->
     <link rel="stylesheet" href="StylesCSS/style.css" />
 </head>
+
 <body>
 
+<!-- =====================================================
+     HEADER: Navigation, Logo und Suchleiste
+     ===================================================== -->
 <header>
     <div class="logo">
-        <img src="Bilder/BlueShark.png" alt="Logo" class="logo-image" />
+        <img src="Bilder/BlueShark.png" alt="BlueShark Logo" class="logo-image" />
         <span class="logo-text">BlueShark</span>
     </div>
+
     <nav>
         <a href="index.html" class="active">Home</a>
         <a href="about.html">About</a>
     </nav>
-    <input type="search" id="searchInput" placeholder="Projekt suchen..." />
+
+    <input type="search" id="searchInput" placeholder="Projekt suchen..." aria-label="Projekt suchen" />
 </header>
 
+<!-- =====================================================
+     MAIN: Dashboard, Filter und Projektkarten
+     ===================================================== -->
 <main>
-    <section class="dashboard"><h2 id="dashboardTitle">Project Dashboard</h2></section>
-    <section class="content-area">
-        <aside class="filters">
+
+    <!-- Überschrift des Dashboards -->
+    <section class="dashboard">
+        <h2 id="dashboardTitle">Project Dashboard</h2>
+    </section>
+
+    <div class="content-area">
+
+        <!-- =================================================
+             FILTER: Projekt, Projektleiter, Status & Jahr
+             ================================================= -->
+        <aside class="filters" aria-label="Projektfilter">
             <h3>Filter</h3>
 
+            <!-- Projektname-Filter -->
             <div class="filter-group">
-                <button class="filter-toggle">Project</button>
-                <div class="filter-options">
-                    <select id="projectFilter"><option value="">All Projects</option></select>
+                <button class="filter-toggle" aria-expanded="false" aria-controls="project-options">Project</button>
+                <div class="filter-options" id="project-options">
+                    <select id="projectFilter" aria-label="Projekt auswählen">
+                        <option value="">All Projects</option>
+                    </select>
                 </div>
             </div>
 
+            <!-- Projektleiter-Filter -->
             <div class="filter-group">
-                <button class="filter-toggle">Project Leader</button>
-                <div class="filter-options">
-                    <select id="leaderFilter"><option value="">All Leaders</option></select>
+                <button class="filter-toggle" aria-expanded="false" aria-controls="leader-options">Project Leader</button>
+                <div class="filter-options" id="leader-options">
+                    <select id="leaderFilter" aria-label="Projektleiter auswählen">
+                        <option value="">All Leaders</option>
+                    </select>
                 </div>
             </div>
 
+            <!-- Status-Filter (visuelle Farben) -->
             <div class="filter-group">
-                <button class="filter-toggle">Status</button>
-                <div class="filter-options">
+                <button class="filter-toggle" aria-expanded="false" aria-controls="status-options">Status</button>
+                <div class="filter-options" id="status-options">
                     <label class="status-label">
                         <input type="checkbox" value="On track" />
                         <span class="status-dot status-ontrack"></span> On track
-                    </label><br />
+                    </label>
                     <label class="status-label">
                         <input type="checkbox" value="Delayed" />
                         <span class="status-dot status-delayed"></span> Delayed
-                    </label><br />
+                    </label>
                     <label class="status-label">
                         <input type="checkbox" value="Critical" />
                         <span class="status-dot status-critical"></span> Critical
@@ -57,10 +96,10 @@
                 </div>
             </div>
 
-
+            <!-- Jahresfilter -->
             <div class="filter-group">
-                <button class="filter-toggle">Year</button>
-                <div class="filter-options">
+                <button class="filter-toggle" aria-expanded="false" aria-controls="year-options">Year</button>
+                <div class="filter-options" id="year-options">
                     <label><input type="checkbox" value="2025" /> 2025</label><br />
                     <label><input type="checkbox" value="2024" /> 2024</label><br />
                     <label><input type="checkbox" value="2023" /> 2023</label>
@@ -68,16 +107,26 @@
             </div>
         </aside>
 
-        <section class="projects-section">
-            <div class="status-buttons">
+        <!-- =================================================
+             PROJEKTE: Statusfilter + Projektkarten
+             ================================================= -->
+        <section class="projects-section" aria-label="Projektliste">
+
+            <!-- Statusfilter-Buttons -->
+            <div class="status-buttons" role="group" aria-label="Status Filter">
                 <button data-status="notStarted">Not Started</button>
                 <button data-status="inProgress">In Progress</button>
                 <button data-status="completed">Completed</button>
             </div>
-            <div class="cards" id="projectCards"></div>
+
+            <!-- Projektkarten-Ausgabe -->
+            <div class="cards" id="projectCards" role="region" aria-live="polite"></div>
         </section>
-    </section>
+
+    </div>
 </main>
+
+<!-- JavaScript für dynamische Filter- und Kartendarstellung -->
 <script src="./backend/dashboard.js" defer></script>
 </body>
 </html>

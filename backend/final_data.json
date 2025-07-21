@@ -74,7 +74,7 @@
         "Investitionssicherheit": "mittel",
         "Pflichtprojekt": "Ja",
         "Sicherheits-Level": "Gelb",
-        "Score": 200,
+        "Scoring + DSGVO": 200,
         "Clusterzuordnung": "Innovation",
         "Erläuterung Cluster": "Welche Innovation wird durch das Projekt gefördert?",
         "Hinweis": "<span style=\"font-size:14px\">Ordne Sie das Projekt einem thematischen Cluster zu und begründen Sie kurz Ihre Einschätzung.</span>",
@@ -287,7 +287,7 @@
         "Sicherheitsgrad": "gering",
         "Investitionssicherheit": "mittel",
         "Sicherheits-Level": "Grün",
-        "Score": 100,
+        "Scoring + DSGVO": 100,
         "Hinweis": "<span style=\"font-size:14px\">Ordne Sie das Projekt einem thematischen Cluster zu und begründen Sie kurz Ihre Einschätzung.</span>",
         "Verbundene Projekte": [],
         "Hinweis zum DSGVO": "<span style=\"font-size:14px\">„Personenbezogene Daten“ sind alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person beziehen; als identifizierbar wird eine natürliche Person angesehen, die direkt oder indirekt identifiziert werden kann (z.B. Name, Adresse, Telefonnummer, E-Mail, IP-Adresse, Geburtsdatum, Foto, Beurteilungen, Gehaltsdaten, usw.)</span><br />\r\n&nbsp;",
@@ -361,7 +361,7 @@
         "Investitionssicherheit": "gering",
         "Pflichtprojekt": "Bitte definieren Sie noch den Sicherheitsbeitrag des Projektes.",
         "Sicherheits-Level": "Rot",
-        "Score": 250,
+        "Scoring + DSGVO": 250,
         "Hinweis": "<span style=\"font-size:14px\">Ordne Sie das Projekt einem thematischen Cluster zu und begründen Sie kurz Ihre Einschätzung.</span>",
         "Verbundene Projekte": [],
         "Hinweis zum DSGVO": "<span style=\"font-size:14px\">„Personenbezogene Daten“ sind alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person beziehen; als identifizierbar wird eine natürliche Person angesehen, die direkt oder indirekt identifiziert werden kann (z.B. Name, Adresse, Telefonnummer, E-Mail, IP-Adresse, Geburtsdatum, Foto, Beurteilungen, Gehaltsdaten, usw.)</span><br />\r\n&nbsp;",
@@ -695,7 +695,7 @@
         "Sicherheitsgrad": "mittel",
         "Investitionssicherheit": "sehr hoch",
         "Sicherheits-Level": "Gelb",
-        "Score": 1250,
+        "Scoring + DSGVO": 1250,
         "Klassifikation": "initial project"
       }
     },
@@ -743,7 +743,7 @@
         "Innovationsgrad": "mittel",
         "Sicherheitsgrad": "mittel",
         "Investitionssicherheit": "mittel",
-        "Score": 200,
+        "Scoring + DSGVO": 200,
         "Expertenfaktor": 1,
         "Klassifikation": "initial project"
       }
@@ -1071,7 +1071,7 @@
         "Investitionssicherheit": "gering",
         "Pflichtprojekt": "Bitte definieren Sie noch den Sicherheitsbeitrag des Projektes.",
         "Sicherheits-Level": "Gelb",
-        "Score": 50,
+        "Scoring + DSGVO": 50,
         "Hinweis": "<span style=\"font-size:14px\">Ordne Sie das Projekt einem thematischen Cluster zu und begründen Sie kurz Ihre Einschätzung.</span>",
         "Verbundene Projekte": [],
         "Hinweis zum DSGVO": "<span style=\"font-size:14px\">„Personenbezogene Daten“ sind alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person beziehen; als identifizierbar wird eine natürliche Person angesehen, die direkt oder indirekt identifiziert werden kann (z.B. Name, Adresse, Telefonnummer, E-Mail, IP-Adresse, Geburtsdatum, Foto, Beurteilungen, Gehaltsdaten, usw.)</span><br />\r\n&nbsp;",
@@ -1157,7 +1157,7 @@
         "Innovationsgrad": "sehr hoch",
         "Sicherheitsgrad": "mittel",
         "Investitionssicherheit": "sehr hoch",
-        "Score": 1250,
+        "Scoring + DSGVO": 1250,
         "Klassifikation": "initial project"
       }
     },
@@ -1213,7 +1213,7 @@
         "Sicherheitsgrad": "mittel",
         "Investitionssicherheit": "hoch",
         "Sicherheits-Level": "Gelb",
-        "Score": 150,
+        "Scoring + DSGVO": 150,
         "Clusterzuordnung": "MARisk",
         "Erläuterung Cluster": "Warum gehört dieses Projekt zu den MARisk-Themen?",
         "Verbundene Projekte": "AN-Bau 2 (00686)",
@@ -1308,7 +1308,7 @@
         "Investitionssicherheit": "hoch",
         "Pflichtprojekt": "Bittelkölöölö definieren Sie noch den Sicherheitsbeitrag des Projektes.",
         "Sicherheits-Level": "Grün",
-        "Score": 300,
+        "Scoring + DSGVO": 300,
         "Hinweis": "<span style=\"font-size:14px\">Ordne Sie das Projekt einem thematischen Cluster zu und begründen Sie kurz Ihre Einschätzung.</span>",
         "Verbundene Projekte": [],
         "Hinweis zum DSGVO": "<span style=\"font-size:14px\">„Personenbezogene Daten“ sind alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person beziehen; als identifizierbar wird eine natürliche Person angesehen, die direkt oder indirekt identifiziert werden kann (z.B. Name, Adresse, Telefonnummer, E-Mail, IP-Adresse, Geburtsdatum, Foto, Beurteilungen, Gehaltsdaten, usw.)</span><br />\r\n&nbsp;",
@@ -1429,7 +1429,7 @@
         "Sicherheitsgrad": "hoch",
         "Investitionssicherheit": "mittel",
         "Pflichtprojekt": "Dieses Projekt muss durchgeführt werden.",
-        "Score": 200,
+        "Scoring + DSGVO": 200,
         "Clusterzuordnung": "MARisk",
         "Erläuterung Cluster": "Warum gehört dieses Projekt zu den MARisk-Themen?",
         "1. Person": "Behörde",
@@ -1901,7 +1901,7 @@
         "Innovationsgrad": "sehr hoch",
         "Sicherheitsgrad": "mittel",
         "Investitionssicherheit": "sehr hoch",
-        "Score": 1250,
+        "Scoring + DSGVO": 1250,
         "Clusterzuordnung": "Betrieb",
         "Erläuterung Cluster": "Der Abwicklungsprozess der Auslandsüberweisung muss wegen neuer Bestimmungen ...."
       }
@@ -2036,7 +2036,7 @@
         "Innovationsgrad": "mittel",
         "Sicherheitsgrad": "mittel",
         "Investitionssicherheit": "mittel",
-        "Score": 200
+        "Scoring + DSGVO": 200
       }
     },
     {
@@ -2085,7 +2085,7 @@
         "Investitionssicherheit": "sehr hoch",
         "Pflichtprojekt": "Dieses Projekt muss durchgeführt werden.",
         "Sicherheits-Level": "Rot",
-        "Score": 500,
+        "Scoring + DSGVO": 500,
         "Klassifikation": "initial project"
       }
     },
@@ -2474,7 +2474,7 @@
         "Sicherheitsgrad": "gering",
         "Investitionssicherheit": "gering",
         "Sicherheits-Level": "Grün",
-        "Score": 50,
+        "Scoring + DSGVO": 50,
         "Klassifikation": "initial project"
       }
     },
@@ -2524,7 +2524,7 @@
         "Innovationsgrad": "gering",
         "Sicherheitsgrad": "gering",
         "Investitionssicherheit": "gering",
-        "Score": 50
+        "Scoring + DSGVO": 50
       }
     },
     {
@@ -2777,7 +2777,7 @@
         "Investitionssicherheit": "hoch",
         "Pflichtprojekt": "Dieses Projekt muss durchgeführt werden.",
         "Sicherheits-Level": "Gelb",
-        "Score": 750,
+        "Scoring + DSGVO": 750,
         "Clusterzuordnung": "MARisk",
         "Erläuterung Cluster": "Warum gehört dieses Projekt zu den MARisk-Themen?",
         "Verbundene Projekte": [
@@ -3633,7 +3633,7 @@
         "Innovationsgrad": "sehr hoch",
         "Sicherheitsgrad": "mittel",
         "Investitionssicherheit": "sehr hoch",
-        "Score": 1250,
+        "Scoring + DSGVO": 1250,
         "Clusterzuordnung": "Innovation",
         "Erläuterung Cluster": "Welche Innovation wird durch das Projekt gefördert?",
         "Verbundene Projekte": "Blue Ant (00016)",
@@ -4050,7 +4050,7 @@
         "Innovationsgrad": "gering",
         "Sicherheitsgrad": "mittel",
         "Investitionssicherheit": "gering",
-        "Score": 50,
+        "Scoring + DSGVO": 50,
         "Expertenfaktor": 1.5,
         "Klassifikation": "initial project"
       }
@@ -4139,7 +4139,7 @@
         "Innovationsgrad": "mittel",
         "Sicherheitsgrad": "mittel",
         "Investitionssicherheit": "gering",
-        "Score": 100,
+        "Scoring + DSGVO": 100,
         "Expertenfaktor": 0.6
       }
     },
@@ -4423,7 +4423,7 @@
         "Investitionssicherheit": "sehr hoch",
         "Pflichtprojekt": "Dieses Projekt muss durchgeführt werden.",
         "Sicherheits-Level": "Rot",
-        "Score": 750,
+        "Scoring + DSGVO": 750,
         "Wichtigkeit": 2.1,
         "Dringlichkeit": 2.3,
         "Expertenfaktor": 0.6,
@@ -4559,7 +4559,7 @@
         "Sicherheitsgrad": "mittel",
         "Investitionssicherheit": "gering",
         "Sicherheits-Level": "Gelb",
-        "Score": 150,
+        "Scoring + DSGVO": 150,
         "Klassifikation": "initial project"
       }
     },
@@ -4805,7 +4805,7 @@
         "Sicherheitsgrad": "mittel",
         "Investitionssicherheit": "hoch",
         "Pflichtprojekt": "Ist wichtig!",
-        "Score": 450
+        "Scoring + DSGVO": 450
       }
     },
     {
@@ -4928,7 +4928,7 @@
         "Investitionssicherheit": "hoch",
         "Pflichtprojekt": "Bitte definieren Sie noch den Sicherheitsbeitrag des Projektes.",
         "Sicherheits-Level": "Rot",
-        "Score": 150,
+        "Scoring + DSGVO": 150,
         "Clusterzuordnung": "MARisk",
         "Erläuterung Cluster": "Folgende Aspekte des Projektes betreffen ....",
         "Verbundene Projekte": "Beispielprojekt 2017 (00685)"
@@ -5154,7 +5154,7 @@
         "Investitionssicherheit": "sehr hoch",
         "Pflichtprojekt": "Dieses Projekt muss durchgeführt werden.",
         "Sicherheits-Level": "Rot",
-        "Score": 500
+        "Scoring + DSGVO": 500
       }
     },
     {
@@ -5433,7 +5433,7 @@
         "Sicherheitsgrad": "mittel",
         "Investitionssicherheit": "gering",
         "Sicherheits-Level": "Gelb",
-        "Score": 100,
+        "Scoring + DSGVO": 100,
         "Klassifikation": "initial project"
       }
     },
@@ -5745,7 +5745,7 @@
         "Investitionssicherheit": "sehr hoch",
         "Pflichtprojekt": "Dieses Projekt muss durchgeführt werden.",
         "Sicherheits-Level": "Rot",
-        "Score": 1250,
+        "Scoring + DSGVO": 1250,
         "Clusterzuordnung": "Innovation",
         "Erläuterung Cluster": "Welche Innovation wird durch das Projekt gefördert?",
         "Verbundene Projekte": "Hauptprojekt (00680)",
@@ -6176,7 +6176,7 @@
         "Sicherheitsgrad": "gering",
         "Investitionssicherheit": "hoch",
         "Sicherheits-Level": "Grün",
-        "Score": 150,
+        "Scoring + DSGVO": 150,
         "Clusterzuordnung": "Innovation",
         "Erläuterung Cluster": "Welche Innovation wird durch das Projekt gefördert?",
         "Wichtigkeit": 3,
@@ -6268,7 +6268,7 @@
         "Sicherheitsgrad": "mittel",
         "Investitionssicherheit": "gering",
         "Sicherheits-Level": "Gelb",
-        "Score": 250,
+        "Scoring + DSGVO": 250,
         "Wichtigkeit": 1.5,
         "Dringlichkeit": 0.5,
         "Klassifikation": "initial project"
@@ -6816,7 +6816,7 @@
         "Sicherheitsgrad": "gering",
         "Investitionssicherheit": "gering",
         "Sicherheits-Level": "Grün",
-        "Score": 50,
+        "Scoring + DSGVO": 50,
         "Klassifikation": "initial project"
       }
     },
@@ -7103,7 +7103,7 @@
         "Innovationsgrad": "hoch",
         "Sicherheitsgrad": "mittel",
         "Investitionssicherheit": "gering",
-        "Score": 150
+        "Scoring + DSGVO": 150
       }
     },
     {
@@ -7183,7 +7183,7 @@
         "Sicherheitsgrad": "gering",
         "Investitionssicherheit": "gering",
         "Sicherheits-Level": "Grün",
-        "Score": 50,
+        "Scoring + DSGVO": 50,
         "Klassifikation": "initial project"
       }
     },
@@ -7721,7 +7721,7 @@
         "Innovationsgrad": "sehr hoch",
         "Sicherheitsgrad": "mittel",
         "Investitionssicherheit": "mittel",
-        "Score": 500,
+        "Scoring + DSGVO": 500,
         "Klassifikation": "initial project"
       }
     },
@@ -8403,7 +8403,7 @@
         "Sicherheitsgrad": "mittel",
         "Investitionssicherheit": "sehr hoch",
         "Sicherheits-Level": "Gelb",
-        "Score": 750,
+        "Scoring + DSGVO": 750,
         "Klassifikation": "initial project"
       }
     },
@@ -8772,7 +8772,7 @@
         "Investitionssicherheit": "gering",
         "Pflichtprojekt": "Dieses Projekt muss durchgeführt werden.",
         "Sicherheits-Level": "Rot",
-        "Score": 150,
+        "Scoring + DSGVO": 150,
         "Klassifikation": "initial project"
       }
     },
@@ -8822,7 +8822,7 @@
         "Sicherheitsgrad": "gering",
         "Investitionssicherheit": "sehr hoch",
         "Sicherheits-Level": "Grün",
-        "Score": 750,
+        "Scoring + DSGVO": 750,
         "Klassifikation": "initial project"
       }
     },
@@ -8893,7 +8893,7 @@
         "Investitionssicherheit": "mittel",
         "Pflichtprojekt": "Bitte definieren Sie noch den Sicherheitsbeitrag des Projektes.",
         "Sicherheits-Level": "Gelb",
-        "Score": 200,
+        "Scoring + DSGVO": 200,
         "Hinweis": "<span style=\"font-size:14px\">Ordne Sie das Projekt einem thematischen Cluster zu und begründen Sie kurz Ihre Einschätzung.</span>",
         "Verbundene Projekte": [],
         "Hinweis zum DSGVO": "<span style=\"font-size:14px\">„Personenbezogene Daten“ sind alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person beziehen; als identifizierbar wird eine natürliche Person angesehen, die direkt oder indirekt identifiziert werden kann (z.B. Name, Adresse, Telefonnummer, E-Mail, IP-Adresse, Geburtsdatum, Foto, Beurteilungen, Gehaltsdaten, usw.)</span><br />\r\n&nbsp;",
@@ -9355,7 +9355,7 @@
         "Sicherheitsgrad": "gering",
         "Investitionssicherheit": "sehr hoch",
         "Sicherheits-Level": "Grün",
-        "Score": 250,
+        "Scoring + DSGVO": 250,
         "Klassifikation": "initial project"
       }
     },
@@ -9629,7 +9629,7 @@
         "Investitionssicherheit": "mittel",
         "Pflichtprojekt": "Bitte definieren Sie noch den Sicherheitsbeitrag des Projektes.",
         "Sicherheits-Level": "Gelb",
-        "Score": 200,
+        "Scoring + DSGVO": 200,
         "Hinweis": "<span style=\"font-size:14px\">Ordne Sie das Projekt einem thematischen Cluster zu und begründen Sie kurz Ihre Einschätzung.</span>",
         "Verbundene Projekte": [],
         "Hinweis zum DSGVO": "<span style=\"font-size:14px\">„Personenbezogene Daten“ sind alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person beziehen; als identifizierbar wird eine natürliche Person angesehen, die direkt oder indirekt identifiziert werden kann (z.B. Name, Adresse, Telefonnummer, E-Mail, IP-Adresse, Geburtsdatum, Foto, Beurteilungen, Gehaltsdaten, usw.)</span><br />\r\n&nbsp;",
@@ -9893,7 +9893,7 @@
         "Innovationsgrad": "mittel",
         "Sicherheitsgrad": "mittel",
         "Investitionssicherheit": "mittel",
-        "Score": 200,
+        "Scoring + DSGVO": 200,
         "Clusterzuordnung": "Betrieb",
         "Erläuterung Cluster": "Welche operative Prozess wird durch das Projekt sichergestellt?",
         "Verbundene Projekte": [
@@ -10063,7 +10063,7 @@
         "Innovationsgrad": "mittel",
         "Sicherheitsgrad": "mittel",
         "Investitionssicherheit": "mittel",
-        "Score": 200,
+        "Scoring + DSGVO": 200,
         "Clusterzuordnung": "Innovation",
         "Erläuterung Cluster": "Die Innovation ergbit sich aus ....",
         "Klassifikation": "initial project"
@@ -10527,7 +10527,7 @@
         "Innovationsgrad": "hoch",
         "Sicherheitsgrad": "mittel",
         "Investitionssicherheit": "sehr hoch",
-        "Score": 750
+        "Scoring + DSGVO": 750
       }
     },
     {
@@ -10720,7 +10720,7 @@
         "Innovationsgrad": "hoch",
         "Sicherheitsgrad": "mittel",
         "Investitionssicherheit": "sehr hoch",
-        "Score": 750,
+        "Scoring + DSGVO": 750,
         "Wichtigkeit": 3.4,
         "Dringlichkeit": 0.9
       }
@@ -11223,7 +11223,7 @@
         "Sicherheitsgrad": "gering",
         "Investitionssicherheit": "gering",
         "Sicherheits-Level": "Grün",
-        "Score": 50,
+        "Scoring + DSGVO": 50,
         "Klassifikation": "initial project"
       }
     },
@@ -11959,7 +11959,7 @@
         "Sicherheitsgrad": "mittel",
         "Investitionssicherheit": "gering",
         "Sicherheits-Level": "Gelb",
-        "Score": 100,
+        "Scoring + DSGVO": 100,
         "Clusterzuordnung": "MARisk",
         "Erläuterung Cluster": "Warum gehört dieses Projekt zu den MARisk-Themen?",
         "Klassifikation": "initial project"
@@ -12605,7 +12605,7 @@
         "Sicherheitsgrad": "mittel",
         "Investitionssicherheit": "gering",
         "Sicherheits-Level": "Gelb",
-        "Score": 100,
+        "Scoring + DSGVO": 100,
         "Expertenfaktor": 0.6,
         "Klassifikation": "initial project"
       }
@@ -13185,7 +13185,7 @@
         "Sicherheitsgrad": "hoch",
         "Investitionssicherheit": "hoch",
         "Pflichtprojekt": "Dieses Projekt muss durchgeführt werden.",
-        "Score": 750,
+        "Scoring + DSGVO": 750,
         "Klassifikation": "initial project"
       }
     },
@@ -13961,7 +13961,7 @@
         "Investitionssicherheit": "sehr hoch",
         "Pflichtprojekt": "Dieses Projekt muss durchgeführt werden.",
         "Sicherheits-Level": "Rot",
-        "Score": 500,
+        "Scoring + DSGVO": 500,
         "Klassifikation": "initial project"
       }
     },
@@ -14114,7 +14114,7 @@
         "Sicherheitsgrad": "mittel",
         "Investitionssicherheit": "hoch",
         "Pflichtprojekt": "Dieses Projekt muss durchgeführt werden.",
-        "Score": 750,
+        "Scoring + DSGVO": 750,
         "Wichtigkeit": 1.9,
         "Dringlichkeit": 0.7,
         "Expertenfaktor": 1,

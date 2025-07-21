@@ -22,52 +22,81 @@ Die Anwendung wird mit **HTML**, **CSS** und **JavaScript** umgesetzt.
 
 ## 🎯 Ziele
 
-- Aufbau einer API-Verbindung zur Blue Ant Plattform
-- Abrufen und Anzeigen von Projektdaten im Frontend
-- Nutzerfreundliches UI mit responsivem Design
+- Abruf von Projektdaten über die Blue Ant REST API
+- Speicherung & Transformation der Daten im Backend
+- Anzeige im responsiven Frontend
+- Darstellung von Zusatzfeldern & Statusampeln
+- Erweiterbarkeit durch Filterlogik
 
 ---
 
 ## ⚙️ Technologiestack
 
-- **HTML**
-- **CSS**
-- **JavaScript**
-- **Node.js**
-- **API**: REST (Blue Ant API)
-
+| Bereich    | Technologie        |
+|------------|--------------------|
+| Frontend   | HTML, CSS, JavaScript |
+| Backend    | Node.js, Express      |
+| API        | Blue Ant REST API     |
+| Tools      | dotenv, axios, cors, morgan |
 
 ---
 
 
 ## 🗂️ Projektstruktur
 
-**Projekt**/  
-├── **backend**/ # Backend-Logik & Datenverarbeitung  
-│ ├── customer_data.json # Rohdaten von Kundendaten (von API)  
-│ ├── project_data.json # Rohdaten von Projekten (von API)  
-│ ├── final_data.json # Transformierte Projektdaten (bereit fürs Frontend)  
-│ ├── dataManagement.js # Transformationslogik für Projektdaten  
-│ └── server.js # Express-Server (Webserver) + API-Routing  
-│  
-├── **frontend**/ # Benutzeroberfläche  
-│ ├── Bilder/ # Alle Bilddateien  
-│ │ ├── blueant.png  
-│ │ ├── BlueShark.png # Logo mit Hai  
-│ │ ├── furkanbild.png # Teammitglied-Bild  
-│ │ └── profilbild.png # Platzhalterbild  
-│ │  
-│ ├── StylesCSS/ # Zentrales CSS-Styling  
-│ │ └── style.css  
-│ │  
-│ ├── index.html # Startseite mit Projektübersicht  
-│ ├── About.html # Team- & Projektbeschreibung  
-│ └── project.html # Detailseite eines Projekts  
 
-- Der `backend/`-Ordner ruft und verarbeitet die Daten von der BlueAnt-REST-API.
-- Das `frontend/` liest die transformierten Daten aus `/api/final-data`.
-- Bilder und Logos befinden sich im `frontend/Bilder/`-Verzeichnis.
-- Das CSS befindet sich zentral in `frontend/StylesCSS/style.css`.
+```plaintext
+Projekt/
+├── backend/                   # Serverseitige Datenlogik
+│   ├── customer_data.json              # API: Kundendaten
+│   ├── project_data.json               # API: Rohdaten aller Projekte
+│   ├── final_data.json                 # Transformierte Projektliste für Frontend
+│   ├── customfields_structor.json      # Struktur der Custom Fields
+│   ├── projectStatusHistory.json       # Meilenstein-/Statusverlauf eines Projekts
+│   ├── dataManagement.js               # Logik zur Datenbearbeitung & Mappings
+│   ├── dashboard.js                    # JS-Funktionalität für Dashboardseite
+│   ├── details.js                      # JS für die Projekt-Detailseite
+│   └── server.js                       # Hauptserver mit API-Endpunkten
+
+├── frontend/                 # Benutzeroberfläche
+│   ├── Bilder/                         # Logos & Profilbilder
+│   │   ├── blueant.png
+│   │   ├── BlueShark.png
+│   │   ├── furkanbild.png
+│   │   └── profilbild.png
+│   │
+│   ├── StylesCSS/                     # Zentrales Styling
+│   │   └── style.css
+│   │
+│   ├── index.html                     # Projektübersicht
+│   ├── About.html                     # Über uns / Projektbeschreibung
+│   └── project.html                   # Einzelprojektansicht
+Projekt/
+├── backend/                   # Serverseitige Datenlogik
+│   ├── customer_data.json              # API: Kundendaten
+│   ├── project_data.json               # API: Rohdaten aller Projekte
+│   ├── final_data.json                 # Transformierte Projektliste für Frontend
+│   ├── customfields_structor.json      # Struktur der Custom Fields
+│   ├── projectStatusHistory.json       # Meilenstein-/Statusverlauf eines Projekts
+│   ├── dataManagement.js               # Logik zur Datenbearbeitung & Mappings
+│   ├── dashboard.js                    # JS-Funktionalität für Dashboardseite
+│   ├── details.js                      # JS für die Projekt-Detailseite
+│   └── server.js                       # Hauptserver mit API-Endpunkten
+
+├── frontend/                 # Benutzeroberfläche
+│   ├── Bilder/                         # Logos & Profilbilder
+│   │   ├── blueant.png
+│   │   ├── BlueShark.png
+│   │   ├── furkanbild.png
+│   │   └── profilbild.png
+│   │
+│   ├── StylesCSS/                     # Zentrales Styling
+│   │   └── style.css
+│   │
+│   ├── index.html                     # Projektübersicht
+│   ├── About.html                     # Über uns / Projektbeschreibung
+│   └── project.html                   # Einzelprojektansicht
+```
 
 # to do´s um den Webserver zu starten
 ## 1. **Node.js (lts)** muss installiert werden  
