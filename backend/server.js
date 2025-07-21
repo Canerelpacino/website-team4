@@ -89,34 +89,6 @@ fetch(personApiUrl, {
         console.error('❌ Fehler bei zweiter API-Anfrage:', error.message);
     });
 
-function getHistory(projectId) {
-    fetch('https://dashboard-examples.blueant.cloud/rest/v1/projects/762759454/statushistory', {
-        method: 'GET',
-        headers: {
-            'Authorization': `Bearer ${token}`
-        }
-    })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP-Fehler bei Personen-API: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then(data => {
-            const jsonData = JSON.stringify(data, null, 2);
-            fs.writeFile(path.join(__dirname, 'projectStatusHistory.json'), jsonData, err => {
-                if (err) {
-                    console.error('❌ Fehler beim Schreiben der Meilensteine:', err);
-                } else {
-                    console.log('✅ Meilensteine erfolgreich gespeichert!');
-                }
-            });
-        })
-        .catch(error => {
-            console.error('❌ Fehler bei zweiter API-Anfrage:', error.message);
-        });
-}
-
 app.get('/api/get-history/:projectId', (req, res) => {
     const projectId = req.params.projectId;
     const url = `https://dashboard-examples.blueant.cloud/rest/v1/projects/${projectId}/statushistory`;
@@ -152,8 +124,6 @@ app.get('/api/get-history/:projectId', (req, res) => {
 app.listen(PORT, () => {
     console.log(`✅ Server läuft auf http://localhost:${PORT}`);
 });
-
-
 
 // ==============================
 // Express: Frontend & API-Endpunkt
